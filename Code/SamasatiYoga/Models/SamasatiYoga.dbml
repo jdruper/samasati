@@ -40,6 +40,7 @@
       <Column Name="Location" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Details" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
       <Association Name="Course_UserCourse" Member="UserCourses" ThisKey="CourseId" OtherKey="CourseId" Type="UserCourse" />
+      <Association Name="Course_CourseCost" Member="CourseCosts" ThisKey="CourseId" OtherKey="CourseId" Type="CourseCost" />
     </Type>
   </Table>
   <Table Name="dbo.Cost" Member="Costs">
@@ -48,6 +49,7 @@
       <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Association Name="Cost_UserCourse" Member="UserCourses" ThisKey="CostId" OtherKey="CostId" Type="UserCourse" />
+      <Association Name="Cost_CourseCost" Member="CourseCosts" ThisKey="CostId" OtherKey="CostId" Type="CourseCost" />
     </Type>
   </Table>
   <Table Name="dbo.BillingInformation" Member="BillingInformations">
@@ -62,6 +64,14 @@
       <Column Name="ZipPostalCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="CardNumber" Type="System.Data.Linq.Binary" DbType="Binary(300)" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="User_BillingInformation" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CourseCosts" Member="CourseCosts">
+    <Type Name="CourseCost">
+      <Column Name="CostId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Cost_CourseCost" Member="Cost" ThisKey="CostId" OtherKey="CostId" Type="Cost" IsForeignKey="true" />
+      <Association Name="Course_CourseCost" Member="Course" ThisKey="CourseId" OtherKey="CourseId" Type="Course" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

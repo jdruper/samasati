@@ -39,14 +39,14 @@
         <classShapeMoniker Id="a08b8cc5-0b0b-4856-93ca-1e192c1e4b5c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.85500325520833); (6.25 : 4.85500325520833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.85500325520833); (6.25 : 4.85500325520833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SamasatiYogaDataContext/Course/Course_UserCourse" />
       <nodes>
         <classShapeMoniker Id="b3f41756-0cb0-4652-afcc-0c2336003d32" />
         <classShapeMoniker Id="a08b8cc5-0b0b-4856-93ca-1e192c1e4b5c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.66429768880208); (6.25 : 5.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.66429768880208); (6.25 : 5.66429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SamasatiYogaDataContext/Cost/Cost_UserCourse" />
       <nodes>
         <classShapeMoniker Id="5e29c99f-1683-4816-b279-80da15f8d733" />
@@ -58,6 +58,26 @@
       <nodes>
         <classShapeMoniker Id="b517efcb-03f3-4779-96a0-a5862636acf7" />
         <classShapeMoniker Id="66803056-93d5-48e6-a282-53843f689bbd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6be70fa8-6c7b-4afa-a609-2e97ee797cf0" absoluteBounds="0.875, 5.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/SamasatiYogaDataContext/CourseCost" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26f9c4a7-ba29-42d6-b15d-a3ac05083d3a" absoluteBounds="0.89000000000000012, 6.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 6.38064697265625); (2.875 : 6.38064697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SamasatiYogaDataContext/Cost/Cost_CourseCost" />
+      <nodes>
+        <classShapeMoniker Id="5e29c99f-1683-4816-b279-80da15f8d733" />
+        <classShapeMoniker Id="6be70fa8-6c7b-4afa-a609-2e97ee797cf0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.8125 : 4.9631982421875); (1.8125 : 5.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SamasatiYogaDataContext/Course/Course_CourseCost" />
+      <nodes>
+        <classShapeMoniker Id="b3f41756-0cb0-4652-afcc-0c2336003d32" />
+        <classShapeMoniker Id="6be70fa8-6c7b-4afa-a609-2e97ee797cf0" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

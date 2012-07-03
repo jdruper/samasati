@@ -45,6 +45,9 @@ namespace SamasatiYoga.Models
     partial void InsertBillingInformation(BillingInformation instance);
     partial void UpdateBillingInformation(BillingInformation instance);
     partial void DeleteBillingInformation(BillingInformation instance);
+    partial void InsertCourseCost(CourseCost instance);
+    partial void UpdateCourseCost(CourseCost instance);
+    partial void DeleteCourseCost(CourseCost instance);
     #endregion
 		
 		public SamasatiYogaDataContext() : 
@@ -114,6 +117,14 @@ namespace SamasatiYoga.Models
 			get
 			{
 				return this.GetTable<BillingInformation>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CourseCost> CourseCosts
+		{
+			get
+			{
+				return this.GetTable<CourseCost>();
 			}
 		}
 	}
@@ -805,6 +816,8 @@ namespace SamasatiYoga.Models
 		
 		private EntitySet<UserCourse> _UserCourses;
 		
+		private EntitySet<CourseCost> _CourseCosts;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -826,6 +839,7 @@ namespace SamasatiYoga.Models
 		public Course()
 		{
 			this._UserCourses = new EntitySet<UserCourse>(new Action<UserCourse>(this.attach_UserCourses), new Action<UserCourse>(this.detach_UserCourses));
+			this._CourseCosts = new EntitySet<CourseCost>(new Action<CourseCost>(this.attach_CourseCosts), new Action<CourseCost>(this.detach_CourseCosts));
 			OnCreated();
 		}
 		
@@ -962,6 +976,19 @@ namespace SamasatiYoga.Models
 			}
 		}
 		
+		[Association(Name="Course_CourseCost", Storage="_CourseCosts", ThisKey="CourseId", OtherKey="CourseId")]
+		public EntitySet<CourseCost> CourseCosts
+		{
+			get
+			{
+				return this._CourseCosts;
+			}
+			set
+			{
+				this._CourseCosts.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -993,6 +1020,18 @@ namespace SamasatiYoga.Models
 			this.SendPropertyChanging();
 			entity.Course = null;
 		}
+		
+		private void attach_CourseCosts(CourseCost entity)
+		{
+			this.SendPropertyChanging();
+			entity.Course = this;
+		}
+		
+		private void detach_CourseCosts(CourseCost entity)
+		{
+			this.SendPropertyChanging();
+			entity.Course = null;
+		}
 	}
 	
 	[Table(Name="dbo.Cost")]
@@ -1009,6 +1048,8 @@ namespace SamasatiYoga.Models
 		
 		private EntitySet<UserCourse> _UserCourses;
 		
+		private EntitySet<CourseCost> _CourseCosts;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1024,6 +1065,7 @@ namespace SamasatiYoga.Models
 		public Cost()
 		{
 			this._UserCourses = new EntitySet<UserCourse>(new Action<UserCourse>(this.attach_UserCourses), new Action<UserCourse>(this.detach_UserCourses));
+			this._CourseCosts = new EntitySet<CourseCost>(new Action<CourseCost>(this.attach_CourseCosts), new Action<CourseCost>(this.detach_CourseCosts));
 			OnCreated();
 		}
 		
@@ -1100,6 +1142,19 @@ namespace SamasatiYoga.Models
 			}
 		}
 		
+		[Association(Name="Cost_CourseCost", Storage="_CourseCosts", ThisKey="CostId", OtherKey="CostId")]
+		public EntitySet<CourseCost> CourseCosts
+		{
+			get
+			{
+				return this._CourseCosts;
+			}
+			set
+			{
+				this._CourseCosts.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1127,6 +1182,18 @@ namespace SamasatiYoga.Models
 		}
 		
 		private void detach_UserCourses(UserCourse entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cost = null;
+		}
+		
+		private void attach_CourseCosts(CourseCost entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cost = this;
+		}
+		
+		private void detach_CourseCosts(CourseCost entity)
 		{
 			this.SendPropertyChanging();
 			entity.Cost = null;
@@ -1403,6 +1470,174 @@ namespace SamasatiYoga.Models
 						this._UserId = default(int);
 					}
 					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.CourseCosts")]
+	public partial class CourseCost : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CostId;
+		
+		private int _CourseId;
+		
+		private EntityRef<Cost> _Cost;
+		
+		private EntityRef<Course> _Course;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCostIdChanging(int value);
+    partial void OnCostIdChanged();
+    partial void OnCourseIdChanging(int value);
+    partial void OnCourseIdChanged();
+    #endregion
+		
+		public CourseCost()
+		{
+			this._Cost = default(EntityRef<Cost>);
+			this._Course = default(EntityRef<Course>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_CostId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int CostId
+		{
+			get
+			{
+				return this._CostId;
+			}
+			set
+			{
+				if ((this._CostId != value))
+				{
+					if (this._Cost.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCostIdChanging(value);
+					this.SendPropertyChanging();
+					this._CostId = value;
+					this.SendPropertyChanged("CostId");
+					this.OnCostIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_CourseId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int CourseId
+		{
+			get
+			{
+				return this._CourseId;
+			}
+			set
+			{
+				if ((this._CourseId != value))
+				{
+					if (this._Course.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCourseIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseId = value;
+					this.SendPropertyChanged("CourseId");
+					this.OnCourseIdChanged();
+				}
+			}
+		}
+		
+		[Association(Name="Cost_CourseCost", Storage="_Cost", ThisKey="CostId", OtherKey="CostId", IsForeignKey=true)]
+		public Cost Cost
+		{
+			get
+			{
+				return this._Cost.Entity;
+			}
+			set
+			{
+				Cost previousValue = this._Cost.Entity;
+				if (((previousValue != value) 
+							|| (this._Cost.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Cost.Entity = null;
+						previousValue.CourseCosts.Remove(this);
+					}
+					this._Cost.Entity = value;
+					if ((value != null))
+					{
+						value.CourseCosts.Add(this);
+						this._CostId = value.CostId;
+					}
+					else
+					{
+						this._CostId = default(int);
+					}
+					this.SendPropertyChanged("Cost");
+				}
+			}
+		}
+		
+		[Association(Name="Course_CourseCost", Storage="_Course", ThisKey="CourseId", OtherKey="CourseId", IsForeignKey=true)]
+		public Course Course
+		{
+			get
+			{
+				return this._Course.Entity;
+			}
+			set
+			{
+				Course previousValue = this._Course.Entity;
+				if (((previousValue != value) 
+							|| (this._Course.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Course.Entity = null;
+						previousValue.CourseCosts.Remove(this);
+					}
+					this._Course.Entity = value;
+					if ((value != null))
+					{
+						value.CourseCosts.Add(this);
+						this._CourseId = value.CourseId;
+					}
+					else
+					{
+						this._CourseId = default(int);
+					}
+					this.SendPropertyChanged("Course");
 				}
 			}
 		}
