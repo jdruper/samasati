@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="0ed87bf9-4330-4c71-9828-b2716fb33d6a" name="Jose@KIARA 2012-06-21 00:51:05" runUser="Kiara\Jose" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Default Run Configuration" id="d37eb28b-4ea1-4f80-9178-b973edb89f59">
+    <Deployment runDeploymentRoot="C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\bin\Debug\TestResults\Jose_KIARA 2012-06-21 00_51_05" />
+    <Hosts skipUnhostableTests="false" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="17" executed="17" passed="17" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2012-06-21T00:51:05.5596584-04:00" queuing="2012-06-21T00:51:06.3497035-04:00" start="2012-06-21T00:51:06.4177074-04:00" finish="2012-06-21T00:51:06.7167245-04:00" />
+  <TestDefinitions>
+    <UnitTest name="ChangePassword_Post_ReturnsViewIfChangePasswordFails" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="b1af2ddf-3108-2bb0-24e9-361a9a10f4d5">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="c0e765f8-099a-44c7-b54c-83778d8ecfbd" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsViewIfChangePasswordFails" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsViewIfModelStateIsInvalid" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="c16fa4ca-02eb-6eff-8931-c77d3da3bce7">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="305112a4-8676-4963-bfb0-d9d3e686b155" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="Register_Get_ReturnsView" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="8d1ee099-a064-600c-9050-ee271b9fed2e">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="759796c7-cffa-4f51-b22b-db1e8447ebea" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Get_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="LogOn_Get_ReturnsView" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="c9e87db5-a355-14a7-1133-11c50b1f27d6">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="e6f8c1f5-67c9-4ba1-b9c7-85a829dfc6e1" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Get_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsViewIfValidateUserFails" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="852ffdaa-5793-3d51-ca3e-1c1cbc04b5ef">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="fcc50b11-49c8-4b2f-bdef-6d6ef91f83a9" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsViewIfValidateUserFails" />
+    </UnitTest>
+    <UnitTest name="ChangePasswordSuccess_ReturnsView" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="205f3b69-8139-2b80-944f-c37a17e5ae28">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="2c6f55f7-d125-4d04-9e3b-f479927c6638" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePasswordSuccess_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="96ab1f80-7ba6-c542-08ee-225334dff15b">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="11497eaa-33dd-47e1-a98e-d210ffba76bc" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsRedirectOnSuccess" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="d5c70e61-2d91-8d47-dbb0-e4825dae25c7">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="2edb02c6-b06a-49cd-b9c7-aa6692eba29e" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsRedirectOnSuccess" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="2fdd5200-9978-2446-2eaf-c2908d3ea00c">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="dd166068-bcd2-4578-bec9-67c75632a008" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsViewIfModelStateIsInvalid" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="dc897be3-20ea-d596-1228-77f988f350ef">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="d564562b-457d-473f-a335-96f3dc5cdabc" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Post_ReturnsRedirectOnSuccess" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="05a6726d-9be4-f859-308e-353a25221098">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="eff63f86-816f-413a-8edd-97b00e342fe9" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsRedirectOnSuccess" />
+    </UnitTest>
+    <UnitTest name="About" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="49a42170-507c-9bfb-9186-df05feebf326">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="ae862bf4-5ca0-4983-a75f-c56e8d9098df" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.HomeControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="310563bf-7518-011b-56df-f2b13a27db33">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="bd9ca55c-0e61-421f-ac48-863e59fd7faf" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="LogOff_LogsOutAndRedirects" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="28ee501e-6db9-1e9f-9b43-fc7df8ca9d42">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="61467e86-2358-4c87-b0c8-627e3361907d" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOff_LogsOutAndRedirects" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsViewIfRegistrationFails" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="e7af4872-c931-cdcd-c696-01e553acd9ba">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="84409d1b-f918-413b-844c-94233119a087" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsViewIfRegistrationFails" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="0a891927-c63d-0e8b-c1e2-9944bbe5643a">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="33eac696-4ac7-4d84-86d2-e2024f323421" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.HomeControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Get_ReturnsView" storage="c:\users\jose\desktop\freelance\samasati\solution\code\samasatiyoga\samasatiyoga.tests\bin\debug\samasatiyoga.tests.dll" id="50b2784c-a1d2-d693-66dd-198c895e4b31">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="b02e9e5c-a248-4955-bb1b-63ae0bcbe8cd" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/Jose/Desktop/Freelance/Samasati/Solution/Code/SamasatiYoga/SamasatiYoga.Tests/bin/Debug/SamasatiYoga.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="SamasatiYoga.Tests.Controllers.AccountControllerTest, SamasatiYoga.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Get_ReturnsView" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="50b2784c-a1d2-d693-66dd-198c895e4b31" executionId="b02e9e5c-a248-4955-bb1b-63ae0bcbe8cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="05a6726d-9be4-f859-308e-353a25221098" executionId="eff63f86-816f-413a-8edd-97b00e342fe9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b1af2ddf-3108-2bb0-24e9-361a9a10f4d5" executionId="c0e765f8-099a-44c7-b54c-83778d8ecfbd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="310563bf-7518-011b-56df-f2b13a27db33" executionId="bd9ca55c-0e61-421f-ac48-863e59fd7faf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="205f3b69-8139-2b80-944f-c37a17e5ae28" executionId="2c6f55f7-d125-4d04-9e3b-f479927c6638" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="28ee501e-6db9-1e9f-9b43-fc7df8ca9d42" executionId="61467e86-2358-4c87-b0c8-627e3361907d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c9e87db5-a355-14a7-1133-11c50b1f27d6" executionId="e6f8c1f5-67c9-4ba1-b9c7-85a829dfc6e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="96ab1f80-7ba6-c542-08ee-225334dff15b" executionId="11497eaa-33dd-47e1-a98e-d210ffba76bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2fdd5200-9978-2446-2eaf-c2908d3ea00c" executionId="dd166068-bcd2-4578-bec9-67c75632a008" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc897be3-20ea-d596-1228-77f988f350ef" executionId="d564562b-457d-473f-a335-96f3dc5cdabc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="852ffdaa-5793-3d51-ca3e-1c1cbc04b5ef" executionId="fcc50b11-49c8-4b2f-bdef-6d6ef91f83a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8d1ee099-a064-600c-9050-ee271b9fed2e" executionId="759796c7-cffa-4f51-b22b-db1e8447ebea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5c70e61-2d91-8d47-dbb0-e4825dae25c7" executionId="2edb02c6-b06a-49cd-b9c7-aa6692eba29e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c16fa4ca-02eb-6eff-8931-c77d3da3bce7" executionId="305112a4-8676-4963-bfb0-d9d3e686b155" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e7af4872-c931-cdcd-c696-01e553acd9ba" executionId="84409d1b-f918-413b-844c-94233119a087" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="49a42170-507c-9bfb-9186-df05feebf326" executionId="ae862bf4-5ca0-4983-a75f-c56e8d9098df" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0a891927-c63d-0e8b-c1e2-9944bbe5643a" executionId="33eac696-4ac7-4d84-86d2-e2024f323421" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="b02e9e5c-a248-4955-bb1b-63ae0bcbe8cd" testId="50b2784c-a1d2-d693-66dd-198c895e4b31" testName="ChangePassword_Get_ReturnsView" computerName="KIARA" duration="00:00:00.0461363" startTime="2012-06-21T00:51:06.4797110-04:00" endTime="2012-06-21T00:51:06.5957176-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="eff63f86-816f-413a-8edd-97b00e342fe9" testId="05a6726d-9be4-f859-308e-353a25221098" testName="ChangePassword_Post_ReturnsRedirectOnSuccess" computerName="KIARA" duration="00:00:00.0068109" startTime="2012-06-21T00:51:06.6087184-04:00" endTime="2012-06-21T00:51:06.6267194-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c0e765f8-099a-44c7-b54c-83778d8ecfbd" testId="b1af2ddf-3108-2bb0-24e9-361a9a10f4d5" testName="ChangePassword_Post_ReturnsViewIfChangePasswordFails" computerName="KIARA" duration="00:00:00.0043164" startTime="2012-06-21T00:51:06.6277194-04:00" endTime="2012-06-21T00:51:06.6327197-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="bd9ca55c-0e61-421f-ac48-863e59fd7faf" testId="310563bf-7518-011b-56df-f2b13a27db33" testName="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" computerName="KIARA" duration="00:00:00.0006055" startTime="2012-06-21T00:51:06.6337198-04:00" endTime="2012-06-21T00:51:06.6357199-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2c6f55f7-d125-4d04-9e3b-f479927c6638" testId="205f3b69-8139-2b80-944f-c37a17e5ae28" testName="ChangePasswordSuccess_ReturnsView" computerName="KIARA" duration="00:00:00.0002421" startTime="2012-06-21T00:51:06.6367200-04:00" endTime="2012-06-21T00:51:06.6377200-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="61467e86-2358-4c87-b0c8-627e3361907d" testId="28ee501e-6db9-1e9f-9b43-fc7df8ca9d42" testName="LogOff_LogsOutAndRedirects" computerName="KIARA" duration="00:00:00.0007718" startTime="2012-06-21T00:51:06.6387201-04:00" endTime="2012-06-21T00:51:06.6447204-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e6f8c1f5-67c9-4ba1-b9c7-85a829dfc6e1" testId="c9e87db5-a355-14a7-1133-11c50b1f27d6" testName="LogOn_Get_ReturnsView" computerName="KIARA" duration="00:00:00.0002644" startTime="2012-06-21T00:51:06.6467205-04:00" endTime="2012-06-21T00:51:06.6477206-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="11497eaa-33dd-47e1-a98e-d210ffba76bc" testId="96ab1f80-7ba6-c542-08ee-225334dff15b" testName="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" computerName="KIARA" duration="00:00:00.0015143" startTime="2012-06-21T00:51:06.6487206-04:00" endTime="2012-06-21T00:51:06.6517208-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="dd166068-bcd2-4578-bec9-67c75632a008" testId="2fdd5200-9978-2446-2eaf-c2908d3ea00c" testName="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" computerName="KIARA" duration="00:00:00.0014385" startTime="2012-06-21T00:51:06.6697218-04:00" endTime="2012-06-21T00:51:06.6727220-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d564562b-457d-473f-a335-96f3dc5cdabc" testId="dc897be3-20ea-d596-1228-77f988f350ef" testName="LogOn_Post_ReturnsViewIfModelStateIsInvalid" computerName="KIARA" duration="00:00:00.0003680" startTime="2012-06-21T00:51:06.6727220-04:00" endTime="2012-06-21T00:51:06.6737221-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="fcc50b11-49c8-4b2f-bdef-6d6ef91f83a9" testId="852ffdaa-5793-3d51-ca3e-1c1cbc04b5ef" testName="LogOn_Post_ReturnsViewIfValidateUserFails" computerName="KIARA" duration="00:00:00.0005092" startTime="2012-06-21T00:51:06.6737221-04:00" endTime="2012-06-21T00:51:06.6747221-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="759796c7-cffa-4f51-b22b-db1e8447ebea" testId="8d1ee099-a064-600c-9050-ee271b9fed2e" testName="Register_Get_ReturnsView" computerName="KIARA" duration="00:00:00.0003787" startTime="2012-06-21T00:51:06.6757222-04:00" endTime="2012-06-21T00:51:06.6757222-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2edb02c6-b06a-49cd-b9c7-aa6692eba29e" testId="d5c70e61-2d91-8d47-dbb0-e4825dae25c7" testName="Register_Post_ReturnsRedirectOnSuccess" computerName="KIARA" duration="00:00:00.0013554" startTime="2012-06-21T00:51:06.6767222-04:00" endTime="2012-06-21T00:51:06.6787224-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="305112a4-8676-4963-bfb0-d9d3e686b155" testId="c16fa4ca-02eb-6eff-8931-c77d3da3bce7" testName="Register_Post_ReturnsViewIfModelStateIsInvalid" computerName="KIARA" duration="00:00:00.0003984" startTime="2012-06-21T00:51:06.6787224-04:00" endTime="2012-06-21T00:51:06.6797224-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="84409d1b-f918-413b-844c-94233119a087" testId="e7af4872-c931-cdcd-c696-01e553acd9ba" testName="Register_Post_ReturnsViewIfRegistrationFails" computerName="KIARA" duration="00:00:00.0007645" startTime="2012-06-21T00:51:06.6797224-04:00" endTime="2012-06-21T00:51:06.6817225-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ae862bf4-5ca0-4983-a75f-c56e8d9098df" testId="49a42170-507c-9bfb-9186-df05feebf326" testName="About" computerName="KIARA" duration="00:00:00.0007063" startTime="2012-06-21T00:51:06.6817225-04:00" endTime="2012-06-21T00:51:06.6827226-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="33eac696-4ac7-4d84-86d2-e2024f323421" testId="0a891927-c63d-0e8b-c1e2-9944bbe5643a" testName="Index" computerName="KIARA" duration="00:00:00.0003630" startTime="2012-06-21T00:51:06.6837226-04:00" endTime="2012-06-21T00:51:06.6847227-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

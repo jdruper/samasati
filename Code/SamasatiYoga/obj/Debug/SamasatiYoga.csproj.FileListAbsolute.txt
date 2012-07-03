@@ -1,0 +1,5 @@
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga\bin\SamasatiYoga.dll
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga\bin\SamasatiYoga.pdb
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga\obj\Debug\SamasatiYoga.dll
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga\obj\Debug\SamasatiYoga.pdb

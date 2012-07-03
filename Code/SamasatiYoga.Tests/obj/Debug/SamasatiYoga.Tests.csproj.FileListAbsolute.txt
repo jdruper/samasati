@@ -1,0 +1,8 @@
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\bin\Debug\SamasatiYoga.Tests.dll.config
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\bin\Debug\SamasatiYoga.Tests.dll
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\bin\Debug\SamasatiYoga.Tests.pdb
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\bin\Debug\SamasatiYoga.dll
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\bin\Debug\SamasatiYoga.pdb
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\obj\Debug\SamasatiYoga.Tests.dll
+C:\Users\Jose\Desktop\Freelance\Samasati\Solution\Code\SamasatiYoga\SamasatiYoga.Tests\obj\Debug\SamasatiYoga.Tests.pdb

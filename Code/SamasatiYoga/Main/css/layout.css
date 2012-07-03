@@ -1,0 +1,9 @@
+.tail-top{ background:url(../images/bg1.jpg) top repeat-x}
+
+.col-1, .col-2, .col-3, .col-4{ float:left}
+/*======= width =======*/
+#main {	margin: 0 auto;	position: relative;	width: 980px; }
+
+/*======= header =======*/
+header {height:666px;  background:url(../images/top.jpg) top center no-repeat}
+
