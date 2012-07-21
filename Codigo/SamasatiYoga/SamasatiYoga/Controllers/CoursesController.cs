@@ -11,6 +11,7 @@ namespace SamasatiYoga.Controllers
     public class CoursesController : Controller
     {
         CourseRepository courseRepository = new CourseRepository();
+        String[] defaultCosts = new String[] { "Single", "Double", "Triple", "Dorm" };
 
         //
         // GET: /Courses/
@@ -84,7 +85,8 @@ namespace SamasatiYoga.Controllers
                 EndDate = DateTime.Now.AddDays(7)
             };
 
-            return View(new CourseFormViewModel(course));
+            ViewData["defaultCosts"] =  new SelectList(defaultCosts);
+            return View(course);
         }
 
         //
@@ -92,19 +94,32 @@ namespace SamasatiYoga.Controllers
         // POST: /Dinners/Create
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(Course course)
-        {
+        public ActionResult Create(Course course, FormCollection collection)
+        {            
             if (ModelState.IsValid)
             {
                 try
                 {
+                    var coursePrices = Request["CoursePrices"];
+                    var descriptions = Request["CourseDescriptions"].Split(',');
+                    if (!String.IsNullOrEmpty(coursePrices))
+                    {
+                        var prices = coursePrices.Split(',');
+                        for (int i = 0; i < prices.Count(); i++)
+                        {
+                            course.Costs.Add(new Cost { CourseId = course.CourseId, Description = descriptions[i], Price = Convert.ToDecimal(prices[i]) });
+                        }
+                    }
+
                     courseRepository.Add(course);
-                    courseRepository.Save();
+                    courseRepository.Save();                    
 
                     return RedirectToAction("Details", new { id = course.CourseId });
                 }
                 catch
                 {
+                    ViewData["defaultCosts"] = GenerateCostList(course.Costs.ToList());
+                    ViewData["selectedCosts"] = course.Costs.ToList();  
                     ModelState.AddRuleViolations(course.GetRuleViolations());
                 }
             }
@@ -147,6 +162,32 @@ namespace SamasatiYoga.Controllers
             courseRepository.Save();
 
             return View("Deleted");
+        }
+
+        private SelectList GenerateCostList(List<Cost> selectedCosts)
+        {
+            var descs = defaultCosts;
+            foreach (var cost in selectedCosts)
+            {
+                if (defaultCosts.Contains(cost.Description))
+                {
+                    descs = descs.Where(val => val != cost.Description).ToArray();
+                }
+            }
+
+            if (descs.Count() == 0)
+            {
+                var list = new List<SelectListItem>();
+                list.Add(new SelectListItem { Text = "No remaining costs", Value = "default" });
+                return new SelectList(list, "Value", "Text");
+
+            }
+            else
+            {
+
+                return new SelectList(descs);
+            }
+
         }
     }
 }

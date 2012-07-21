@@ -1,0 +1,15 @@
+﻿.imgButton
+{
+	cursor:pointer;
+}
+
+#divCosts
+{
+	text-align:right;
+	width:280px;
+}
+
+#divCosts div
+{
+	width:280px;
+}

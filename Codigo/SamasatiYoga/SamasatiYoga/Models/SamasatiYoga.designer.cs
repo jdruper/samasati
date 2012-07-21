@@ -36,18 +36,15 @@ namespace SamasatiYoga.Models
     partial void InsertUserCourse(UserCourse instance);
     partial void UpdateUserCourse(UserCourse instance);
     partial void DeleteUserCourse(UserCourse instance);
-    partial void InsertCost(Cost instance);
-    partial void UpdateCost(Cost instance);
-    partial void DeleteCost(Cost instance);
     partial void InsertCourse(Course instance);
     partial void UpdateCourse(Course instance);
     partial void DeleteCourse(Course instance);
-    partial void InsertCourseCost(CourseCost instance);
-    partial void UpdateCourseCost(CourseCost instance);
-    partial void DeleteCourseCost(CourseCost instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertCost(Cost instance);
+    partial void UpdateCost(Cost instance);
+    partial void DeleteCost(Cost instance);
     #endregion
 		
 		public SamasatiYogaDataContext() : 
@@ -96,14 +93,6 @@ namespace SamasatiYoga.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Cost> Costs
-		{
-			get
-			{
-				return this.GetTable<Cost>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Course> Courses
 		{
 			get
@@ -112,19 +101,19 @@ namespace SamasatiYoga.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<CourseCost> CourseCosts
-		{
-			get
-			{
-				return this.GetTable<CourseCost>();
-			}
-		}
-		
 		public System.Data.Linq.Table<User> Users
 		{
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Cost> Costs
+		{
+			get
+			{
+				return this.GetTable<Cost>();
 			}
 		}
 	}
@@ -640,120 +629,6 @@ namespace SamasatiYoga.Models
 		}
 	}
 	
-	[Table(Name="dbo.Cost")]
-	public partial class Cost : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CostId;
-		
-		private string _Description;
-		
-		private EntitySet<CourseCost> _CourseCosts;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCostIdChanging(int value);
-    partial void OnCostIdChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    #endregion
-		
-		public Cost()
-		{
-			this._CourseCosts = new EntitySet<CourseCost>(new Action<CourseCost>(this.attach_CourseCosts), new Action<CourseCost>(this.detach_CourseCosts));
-			OnCreated();
-		}
-		
-		[Column(Storage="_CostId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int CostId
-		{
-			get
-			{
-				return this._CostId;
-			}
-			set
-			{
-				if ((this._CostId != value))
-				{
-					this.OnCostIdChanging(value);
-					this.SendPropertyChanging();
-					this._CostId = value;
-					this.SendPropertyChanged("CostId");
-					this.OnCostIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Description", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[Association(Name="Cost_CourseCost", Storage="_CourseCosts", ThisKey="CostId", OtherKey="CostId")]
-		public EntitySet<CourseCost> CourseCosts
-		{
-			get
-			{
-				return this._CourseCosts;
-			}
-			set
-			{
-				this._CourseCosts.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CourseCosts(CourseCost entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cost = this;
-		}
-		
-		private void detach_CourseCosts(CourseCost entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cost = null;
-		}
-	}
-	
 	[Table(Name="dbo.Course")]
 	public partial class Course : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -774,7 +649,7 @@ namespace SamasatiYoga.Models
 		
 		private EntitySet<UserCourse> _UserCourses;
 		
-		private EntitySet<CourseCost> _CourseCosts;
+		private EntitySet<Cost> _Costs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -797,7 +672,7 @@ namespace SamasatiYoga.Models
 		public Course()
 		{
 			this._UserCourses = new EntitySet<UserCourse>(new Action<UserCourse>(this.attach_UserCourses), new Action<UserCourse>(this.detach_UserCourses));
-			this._CourseCosts = new EntitySet<CourseCost>(new Action<CourseCost>(this.attach_CourseCosts), new Action<CourseCost>(this.detach_CourseCosts));
+			this._Costs = new EntitySet<Cost>(new Action<Cost>(this.attach_Costs), new Action<Cost>(this.detach_Costs));
 			OnCreated();
 		}
 		
@@ -934,16 +809,16 @@ namespace SamasatiYoga.Models
 			}
 		}
 		
-		[Association(Name="Course_CourseCost", Storage="_CourseCosts", ThisKey="CourseId", OtherKey="CourseId")]
-		public EntitySet<CourseCost> CourseCosts
+		[Association(Name="Course_Cost", Storage="_Costs", ThisKey="CourseId", OtherKey="CourseId")]
+		public EntitySet<Cost> Costs
 		{
 			get
 			{
-				return this._CourseCosts;
+				return this._Costs;
 			}
 			set
 			{
-				this._CourseCosts.Assign(value);
+				this._Costs.Assign(value);
 			}
 		}
 		
@@ -979,208 +854,16 @@ namespace SamasatiYoga.Models
 			entity.Course = null;
 		}
 		
-		private void attach_CourseCosts(CourseCost entity)
+		private void attach_Costs(Cost entity)
 		{
 			this.SendPropertyChanging();
 			entity.Course = this;
 		}
 		
-		private void detach_CourseCosts(CourseCost entity)
+		private void detach_Costs(Cost entity)
 		{
 			this.SendPropertyChanging();
 			entity.Course = null;
-		}
-	}
-	
-	[Table(Name="dbo.CourseCosts")]
-	public partial class CourseCost : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CostId;
-		
-		private int _CourseId;
-		
-		private decimal _Price;
-		
-		private EntityRef<Cost> _Cost;
-		
-		private EntityRef<Course> _Course;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCostIdChanging(int value);
-    partial void OnCostIdChanged();
-    partial void OnCourseIdChanging(int value);
-    partial void OnCourseIdChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
-    #endregion
-		
-		public CourseCost()
-		{
-			this._Cost = default(EntityRef<Cost>);
-			this._Course = default(EntityRef<Course>);
-			OnCreated();
-		}
-		
-		[Column(Storage="_CostId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int CostId
-		{
-			get
-			{
-				return this._CostId;
-			}
-			set
-			{
-				if ((this._CostId != value))
-				{
-					if (this._Cost.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCostIdChanging(value);
-					this.SendPropertyChanging();
-					this._CostId = value;
-					this.SendPropertyChanged("CostId");
-					this.OnCostIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CourseId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int CourseId
-		{
-			get
-			{
-				return this._CourseId;
-			}
-			set
-			{
-				if ((this._CourseId != value))
-				{
-					if (this._Course.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCourseIdChanging(value);
-					this.SendPropertyChanging();
-					this._CourseId = value;
-					this.SendPropertyChanged("CourseId");
-					this.OnCourseIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this.OnPriceChanging(value);
-					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
-				}
-			}
-		}
-		
-		[Association(Name="Cost_CourseCost", Storage="_Cost", ThisKey="CostId", OtherKey="CostId", IsForeignKey=true)]
-		public Cost Cost
-		{
-			get
-			{
-				return this._Cost.Entity;
-			}
-			set
-			{
-				Cost previousValue = this._Cost.Entity;
-				if (((previousValue != value) 
-							|| (this._Cost.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cost.Entity = null;
-						previousValue.CourseCosts.Remove(this);
-					}
-					this._Cost.Entity = value;
-					if ((value != null))
-					{
-						value.CourseCosts.Add(this);
-						this._CostId = value.CostId;
-					}
-					else
-					{
-						this._CostId = default(int);
-					}
-					this.SendPropertyChanged("Cost");
-				}
-			}
-		}
-		
-		[Association(Name="Course_CourseCost", Storage="_Course", ThisKey="CourseId", OtherKey="CourseId", IsForeignKey=true)]
-		public Course Course
-		{
-			get
-			{
-				return this._Course.Entity;
-			}
-			set
-			{
-				Course previousValue = this._Course.Entity;
-				if (((previousValue != value) 
-							|| (this._Course.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Course.Entity = null;
-						previousValue.CourseCosts.Remove(this);
-					}
-					this._Course.Entity = value;
-					if ((value != null))
-					{
-						value.CourseCosts.Add(this);
-						this._CourseId = value.CourseId;
-					}
-					else
-					{
-						this._CourseId = default(int);
-					}
-					this.SendPropertyChanged("Course");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -1591,6 +1274,181 @@ namespace SamasatiYoga.Models
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
+		}
+	}
+	
+	[Table(Name="dbo.Cost")]
+	public partial class Cost : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CostId;
+		
+		private int _CourseId;
+		
+		private string _Description;
+		
+		private decimal _Price;
+		
+		private EntityRef<Course> _Course;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCostIdChanging(int value);
+    partial void OnCostIdChanged();
+    partial void OnCourseIdChanging(int value);
+    partial void OnCourseIdChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnPriceChanging(decimal value);
+    partial void OnPriceChanged();
+    #endregion
+		
+		public Cost()
+		{
+			this._Course = default(EntityRef<Course>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_CostId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CostId
+		{
+			get
+			{
+				return this._CostId;
+			}
+			set
+			{
+				if ((this._CostId != value))
+				{
+					this.OnCostIdChanging(value);
+					this.SendPropertyChanging();
+					this._CostId = value;
+					this.SendPropertyChanged("CostId");
+					this.OnCostIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_CourseId", DbType="Int NOT NULL")]
+		public int CourseId
+		{
+			get
+			{
+				return this._CourseId;
+			}
+			set
+			{
+				if ((this._CourseId != value))
+				{
+					if (this._Course.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCourseIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseId = value;
+					this.SendPropertyChanged("CourseId");
+					this.OnCourseIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Description", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Price", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[Association(Name="Course_Cost", Storage="_Course", ThisKey="CourseId", OtherKey="CourseId", IsForeignKey=true)]
+		public Course Course
+		{
+			get
+			{
+				return this._Course.Entity;
+			}
+			set
+			{
+				Course previousValue = this._Course.Entity;
+				if (((previousValue != value) 
+							|| (this._Course.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Course.Entity = null;
+						previousValue.Costs.Remove(this);
+					}
+					this._Course.Entity = value;
+					if ((value != null))
+					{
+						value.Costs.Add(this);
+						this._CourseId = value.CourseId;
+					}
+					else
+					{
+						this._CourseId = default(int);
+					}
+					this.SendPropertyChanged("Course");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

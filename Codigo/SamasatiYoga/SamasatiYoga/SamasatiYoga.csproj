@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Models\CourseFormViewModel.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -73,8 +72,6 @@
     </Compile>
     <Compile Include="Helpers\ControllerHelpers.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Cost.cs" />
-    <Compile Include="Models\CostRepository.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseRepository.cs" />
     <Compile Include="Models\SamasatiYoga.designer.cs">
@@ -85,6 +82,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Css\common.css" />
+    <Content Include="Content\Css\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="Content\Css\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="Content\Css\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="Content\Css\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="Content\Css\images\ui-bg_highlight-hard_15_12808a_1x100.png" />
+    <Content Include="Content\Css\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="Content\Css\images\ui-bg_highlight-soft_25_1096a2_1x100.png" />
+    <Content Include="Content\Css\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="Content\Css\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="Content\Css\images\ui-icons_808080_256x240.png" />
+    <Content Include="Content\Css\images\ui-icons_847e71_256x240.png" />
+    <Content Include="Content\Css\images\ui-icons_8dc262_256x240.png" />
+    <Content Include="Content\Css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Css\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="Content\Css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Css\jquery-ui-1.8.21.custom.css" />
+    <Content Include="Content\Images\add.png" />
+    <Content Include="Content\Images\delete.png" />
     <Content Include="Global.asax" />
     <Content Include="Main\css\layout.css" />
     <Content Include="Main\css\reset.css" />
@@ -167,6 +183,10 @@
     <Content Include="Main\js\html5.js" />
     <Content Include="Main\js\jquery-1.4.2.min.js" />
     <Content Include="Main\js\maxheight.js" />
+    <Content Include="Scripts\Course.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.21.custom.min.js" />
+    <Content Include="Views\Courses\CourseForm.ascx" />
     <Content Include="Views\Courses\Create.aspx" />
     <Content Include="Views\Courses\Delete.aspx" />
     <Content Include="Views\Courses\Deleted.aspx" />
@@ -175,7 +195,7 @@
     <Content Include="Views\Courses\Index.aspx" />
     <Content Include="Views\Courses\NotFound.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Css\Site.css" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />

@@ -16,11 +16,12 @@ namespace SamasatiYoga.Models
 {
     public partial class Course
     {
+
         public bool IsValid
         {
             get { return (GetRuleViolations().Count() == 0); }
         }
-
+     
         public IEnumerable<RuleViolation> GetRuleViolations()
         {
             if (String.IsNullOrEmpty(Name))
@@ -38,6 +39,22 @@ namespace SamasatiYoga.Models
             if (EndDate < DateTime.Today || EndDate < StartDate)
                 yield return new RuleViolation("End Date must be after today's date and start date", "EndDate");
 
+            if (Costs.Count == 0)
+            {
+                yield return new RuleViolation("You must select at least one cost", "Costs");
+            }
+            else
+            {
+                foreach (var cost in Costs)
+                {
+                    if (cost.Price <= 0)
+                    {
+                        yield return new RuleViolation("Each cost must be greater than 0", "Costs");
+                        break;
+                    }
+                }
+            }
+            
             yield break;
         }
 

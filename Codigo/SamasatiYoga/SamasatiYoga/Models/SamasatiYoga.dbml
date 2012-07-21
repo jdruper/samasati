@@ -25,13 +25,6 @@
       <Association Name="User_UserCourse" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Cost" Member="Costs">
-    <Type Name="Cost">
-      <Column Name="CostId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Cost_CourseCost" Member="CourseCosts" ThisKey="CostId" OtherKey="CostId" Type="CourseCost" />
-    </Type>
-  </Table>
   <Table Name="dbo.Course" Member="Courses">
     <Type Name="Course">
       <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -41,16 +34,7 @@
       <Column Name="Location" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Details" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
       <Association Name="Course_UserCourse" Member="UserCourses" ThisKey="CourseId" OtherKey="CourseId" Type="UserCourse" />
-      <Association Name="Course_CourseCost" Member="CourseCosts" ThisKey="CourseId" OtherKey="CourseId" Type="CourseCost" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CourseCosts" Member="CourseCosts">
-    <Type Name="CourseCost">
-      <Column Name="CostId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Association Name="Cost_CourseCost" Member="Cost" ThisKey="CostId" OtherKey="CostId" Type="Cost" IsForeignKey="true" />
-      <Association Name="Course_CourseCost" Member="Course" ThisKey="CourseId" OtherKey="CourseId" Type="Course" IsForeignKey="true" />
+      <Association Name="Course_Cost" Member="Costs" ThisKey="CourseId" OtherKey="CourseId" Type="Cost" />
     </Type>
   </Table>
   <Table Name="dbo.[User]" Member="Users">
@@ -70,6 +54,15 @@
       <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="User_BillingInformation" Member="BillingInformation" ThisKey="UserId" OtherKey="UserId" Type="BillingInformation" Cardinality="One" />
       <Association Name="User_UserCourse" Member="UserCourses" ThisKey="UserId" OtherKey="UserId" Type="UserCourse" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cost" Member="Costs">
+    <Type Name="Cost">
+      <Column Name="CostId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Course_Cost" Member="Course" ThisKey="CourseId" OtherKey="CourseId" Type="Course" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
