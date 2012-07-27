@@ -72,7 +72,7 @@
             <%} }%>
             </div>
             <p>
-                <input type="submit" value="Create" />
+                <input type="submit" id="btnCreate" value="Save" />
             </p>
         </fieldset>
 

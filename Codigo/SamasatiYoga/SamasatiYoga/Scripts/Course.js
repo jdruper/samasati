@@ -64,7 +64,7 @@ function onBlurCost(txt) {
 }
 
 function isWhole(s) {
-    var isWhole_re = /^\s*\d+\s*$/;
+    var isWhole_re = /^\s*\d*(\.\d{0,2})?\s*$/;   
     return String(s).search(isWhole_re) != -1;
 
 }

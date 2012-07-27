@@ -37,8 +37,15 @@ namespace SamasatiYoga.Controllers
             }
             else
             {
+                ViewData["selectedCosts"] = course.Costs.ToList();  
                 return View(course);
             }
+        }
+
+        public ActionResult RYTCourses()
+        {
+            var courses = courseRepository.FindAllCourses().ToList();
+            return View(courses);
         }
 
         //
@@ -46,8 +53,12 @@ namespace SamasatiYoga.Controllers
 
         public ActionResult Edit(int id)
         {
-            var dinner = courseRepository.GetCourse(id);
-            return View(dinner);
+            var course = courseRepository.GetCourse(id);
+
+            ViewData["defaultCosts"] = GenerateCostList(course.Costs.ToList());
+            ViewData["selectedCosts"] = course.Costs.ToList();  
+
+            return View(course);
         }
 
 
@@ -58,18 +69,63 @@ namespace SamasatiYoga.Controllers
         public ActionResult Edit(int id, FormCollection formValues)
         {
 
-            var course = courseRepository.GetCourse(id);
+            var course = courseRepository.GetCourse(id);            
 
             try
             {
-                UpdateModel(course);
-                courseRepository.Save();
+                var coursePrices = Request["CoursePrices"];
+                var courseDescriptions = Request["CourseDescriptions"];
+                
+                if (String.IsNullOrEmpty(coursePrices))
+                {
+                    course.Costs.Clear();
+                }
+                else
+                {
+                    var prices = coursePrices.Split(',');
+                    var descriptions = courseDescriptions.Split(',');
+                    var costList = new List<Cost>();
+
+                    for (int i = 0; i < prices.Count(); i++)
+                    {
+                        costList.Add(new Cost { CourseId = course.CourseId, Description = descriptions[i], Price = Convert.ToDecimal(prices[i].Replace(".",",")) });
+                    }
+
+                    var tempCosts = course.Costs.ToList();
+
+                    foreach (var cost in tempCosts)
+                    {
+                        var price = costList.Where(val => val.Description == cost.Description).FirstOrDefault();                        
+                        
+                        if(price == null)
+                        {
+                            course.Costs.Remove(cost);
+                            continue;
+                        }
+                        cost.Price = price.Price;
+                        costList = costList.Where(val => val.Description != cost.Description).ToList();
+                    }
+
+                    course.Costs.AddRange(costList);
+                }
+
+                if (course.IsValid)
+                {
+                    UpdateModel(course);
+                    courseRepository.Save();
+                }
+                else
+                {
+                    throw new Exception();
+                }
 
                 return RedirectToAction("Details", new { id = course.CourseId });
             }
             catch
             {
                 ModelState.AddRuleViolations(course.GetRuleViolations());
+                ViewData["defaultCosts"] = GenerateCostList(course.Costs.ToList());
+                ViewData["selectedCosts"] = course.Costs.ToList();  
                 return View(course);
             }
         }
@@ -91,7 +147,7 @@ namespace SamasatiYoga.Controllers
 
         //
         //
-        // POST: /Dinners/Create
+        // POST: /Course/Create
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(Course course, FormCollection collection)
@@ -101,18 +157,28 @@ namespace SamasatiYoga.Controllers
                 try
                 {
                     var coursePrices = Request["CoursePrices"];
-                    var descriptions = Request["CourseDescriptions"].Split(',');
+                    var courseDescriptions = Request["CourseDescriptions"];
+
                     if (!String.IsNullOrEmpty(coursePrices))
                     {
+                        var descriptions = courseDescriptions.Split(',');
                         var prices = coursePrices.Split(',');
+
                         for (int i = 0; i < prices.Count(); i++)
                         {
-                            course.Costs.Add(new Cost { CourseId = course.CourseId, Description = descriptions[i], Price = Convert.ToDecimal(prices[i]) });
+                            course.Costs.Add(new Cost { CourseId = course.CourseId, Description = descriptions[i], Price = Convert.ToDecimal(prices[i].Replace(".",",")) });
                         }
                     }
 
-                    courseRepository.Add(course);
-                    courseRepository.Save();                    
+                    if (course.IsValid)
+                    {
+                        courseRepository.Add(course);
+                        courseRepository.Save();
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
 
                     return RedirectToAction("Details", new { id = course.CourseId });
                 }
@@ -145,7 +211,7 @@ namespace SamasatiYoga.Controllers
         }
 
         //
-        // HTTP POST: /Dinners/Delete/1
+        // HTTP POST: /Course/Delete/id
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Delete(int id, string confirmButton)

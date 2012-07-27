@@ -67,6 +67,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -79,6 +80,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SamasatiYoga.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +189,7 @@
     <Content Include="Scripts\Course.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.21.custom.min.js" />
+    <Content Include="Scripts\User.js" />
     <Content Include="Views\Courses\CourseForm.ascx" />
     <Content Include="Views\Courses\Create.aspx" />
     <Content Include="Views\Courses\Delete.aspx" />
@@ -194,6 +198,8 @@
     <Content Include="Views\Courses\Edit.aspx" />
     <Content Include="Views\Courses\Index.aspx" />
     <Content Include="Views\Courses\NotFound.aspx" />
+    <Content Include="Views\Courses\RYTCourses.aspx" />
+    <Content Include="Views\Users\Register.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Scripts\jquery-1.4.1.js" />

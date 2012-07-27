@@ -30,21 +30,21 @@ namespace SamasatiYoga.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertBillingInformation(BillingInformation instance);
-    partial void UpdateBillingInformation(BillingInformation instance);
-    partial void DeleteBillingInformation(BillingInformation instance);
     partial void InsertUserCourse(UserCourse instance);
     partial void UpdateUserCourse(UserCourse instance);
     partial void DeleteUserCourse(UserCourse instance);
     partial void InsertCourse(Course instance);
     partial void UpdateCourse(Course instance);
     partial void DeleteCourse(Course instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
     partial void InsertCost(Cost instance);
     partial void UpdateCost(Cost instance);
     partial void DeleteCost(Cost instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
+    partial void InsertBillingInformation(BillingInformation instance);
+    partial void UpdateBillingInformation(BillingInformation instance);
+    partial void DeleteBillingInformation(BillingInformation instance);
     #endregion
 		
 		public SamasatiYogaDataContext() : 
@@ -77,14 +77,6 @@ namespace SamasatiYoga.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<BillingInformation> BillingInformations
-		{
-			get
-			{
-				return this.GetTable<BillingInformation>();
-			}
-		}
-		
 		public System.Data.Linq.Table<UserCourse> UserCourses
 		{
 			get
@@ -101,6 +93,14 @@ namespace SamasatiYoga.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<Cost> Costs
+		{
+			get
+			{
+				return this.GetTable<Cost>();
+			}
+		}
+		
 		public System.Data.Linq.Table<User> Users
 		{
 			get
@@ -109,306 +109,11 @@ namespace SamasatiYoga.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Cost> Costs
+		public System.Data.Linq.Table<BillingInformation> BillingInformations
 		{
 			get
 			{
-				return this.GetTable<Cost>();
-			}
-		}
-	}
-	
-	[Table(Name="dbo.BillingInformation")]
-	public partial class BillingInformation : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UserId;
-		
-		private string _FirstName;
-		
-		private string _LastName;
-		
-		private string _BillingAddress;
-		
-		private string _City;
-		
-		private string _State;
-		
-		private string _Country;
-		
-		private string _ZipPostalCode;
-		
-		private System.Data.Linq.Binary _CardNumber;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnLastNameChanging(string value);
-    partial void OnLastNameChanged();
-    partial void OnBillingAddressChanging(string value);
-    partial void OnBillingAddressChanged();
-    partial void OnCityChanging(string value);
-    partial void OnCityChanged();
-    partial void OnStateChanging(string value);
-    partial void OnStateChanged();
-    partial void OnCountryChanging(string value);
-    partial void OnCountryChanged();
-    partial void OnZipPostalCodeChanging(string value);
-    partial void OnZipPostalCodeChanged();
-    partial void OnCardNumberChanging(System.Data.Linq.Binary value);
-    partial void OnCardNumberChanged();
-    #endregion
-		
-		public BillingInformation()
-		{
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[Column(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_FirstName", DbType="NVarChar(50)")]
-		public string FirstName
-		{
-			get
-			{
-				return this._FirstName;
-			}
-			set
-			{
-				if ((this._FirstName != value))
-				{
-					this.OnFirstNameChanging(value);
-					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_LastName", DbType="NVarChar(50)")]
-		public string LastName
-		{
-			get
-			{
-				return this._LastName;
-			}
-			set
-			{
-				if ((this._LastName != value))
-				{
-					this.OnLastNameChanging(value);
-					this.SendPropertyChanging();
-					this._LastName = value;
-					this.SendPropertyChanged("LastName");
-					this.OnLastNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_BillingAddress", DbType="NVarChar(200)")]
-		public string BillingAddress
-		{
-			get
-			{
-				return this._BillingAddress;
-			}
-			set
-			{
-				if ((this._BillingAddress != value))
-				{
-					this.OnBillingAddressChanging(value);
-					this.SendPropertyChanging();
-					this._BillingAddress = value;
-					this.SendPropertyChanged("BillingAddress");
-					this.OnBillingAddressChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_City", DbType="NVarChar(50)")]
-		public string City
-		{
-			get
-			{
-				return this._City;
-			}
-			set
-			{
-				if ((this._City != value))
-				{
-					this.OnCityChanging(value);
-					this.SendPropertyChanging();
-					this._City = value;
-					this.SendPropertyChanged("City");
-					this.OnCityChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_State", DbType="NVarChar(50)")]
-		public string State
-		{
-			get
-			{
-				return this._State;
-			}
-			set
-			{
-				if ((this._State != value))
-				{
-					this.OnStateChanging(value);
-					this.SendPropertyChanging();
-					this._State = value;
-					this.SendPropertyChanged("State");
-					this.OnStateChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Country", DbType="NVarChar(100)")]
-		public string Country
-		{
-			get
-			{
-				return this._Country;
-			}
-			set
-			{
-				if ((this._Country != value))
-				{
-					this.OnCountryChanging(value);
-					this.SendPropertyChanging();
-					this._Country = value;
-					this.SendPropertyChanged("Country");
-					this.OnCountryChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_ZipPostalCode", DbType="VarChar(15)")]
-		public string ZipPostalCode
-		{
-			get
-			{
-				return this._ZipPostalCode;
-			}
-			set
-			{
-				if ((this._ZipPostalCode != value))
-				{
-					this.OnZipPostalCodeChanging(value);
-					this.SendPropertyChanging();
-					this._ZipPostalCode = value;
-					this.SendPropertyChanged("ZipPostalCode");
-					this.OnZipPostalCodeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CardNumber", DbType="Binary(300)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary CardNumber
-		{
-			get
-			{
-				return this._CardNumber;
-			}
-			set
-			{
-				if ((this._CardNumber != value))
-				{
-					this.OnCardNumberChanging(value);
-					this.SendPropertyChanging();
-					this._CardNumber = value;
-					this.SendPropertyChanged("CardNumber");
-					this.OnCardNumberChanged();
-				}
-			}
-		}
-		
-		[Association(Name="User_BillingInformation", Storage="_User", ThisKey="UserId", OtherKey="UserId", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.BillingInformation = null;
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.BillingInformation = this;
-						this._UserId = value.UserId;
-					}
-					else
-					{
-						this._UserId = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<BillingInformation>();
 			}
 		}
 	}
@@ -867,6 +572,181 @@ namespace SamasatiYoga.Models
 		}
 	}
 	
+	[Table(Name="dbo.Cost")]
+	public partial class Cost : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CostId;
+		
+		private int _CourseId;
+		
+		private string _Description;
+		
+		private decimal _Price;
+		
+		private EntityRef<Course> _Course;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCostIdChanging(int value);
+    partial void OnCostIdChanged();
+    partial void OnCourseIdChanging(int value);
+    partial void OnCourseIdChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnPriceChanging(decimal value);
+    partial void OnPriceChanged();
+    #endregion
+		
+		public Cost()
+		{
+			this._Course = default(EntityRef<Course>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_CostId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CostId
+		{
+			get
+			{
+				return this._CostId;
+			}
+			set
+			{
+				if ((this._CostId != value))
+				{
+					this.OnCostIdChanging(value);
+					this.SendPropertyChanging();
+					this._CostId = value;
+					this.SendPropertyChanged("CostId");
+					this.OnCostIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_CourseId", DbType="Int NOT NULL")]
+		public int CourseId
+		{
+			get
+			{
+				return this._CourseId;
+			}
+			set
+			{
+				if ((this._CourseId != value))
+				{
+					if (this._Course.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCourseIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseId = value;
+					this.SendPropertyChanged("CourseId");
+					this.OnCourseIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Description", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Price", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[Association(Name="Course_Cost", Storage="_Course", ThisKey="CourseId", OtherKey="CourseId", IsForeignKey=true, DeleteOnNull=true)]
+		public Course Course
+		{
+			get
+			{
+				return this._Course.Entity;
+			}
+			set
+			{
+				Course previousValue = this._Course.Entity;
+				if (((previousValue != value) 
+							|| (this._Course.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Course.Entity = null;
+						previousValue.Costs.Remove(this);
+					}
+					this._Course.Entity = value;
+					if ((value != null))
+					{
+						value.Costs.Add(this);
+						this._CourseId = value.CourseId;
+					}
+					else
+					{
+						this._CourseId = default(int);
+					}
+					this.SendPropertyChanged("Course");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[Table(Name="dbo.[User]")]
 	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -897,11 +777,11 @@ namespace SamasatiYoga.Models
 		
 		private System.Nullable<char> _Gender;
 		
-		private System.Nullable<int> _Age;
-		
-		private EntityRef<BillingInformation> _BillingInformation;
+		private string _Age;
 		
 		private EntitySet<UserCourse> _UserCourses;
+		
+		private EntityRef<BillingInformation> _BillingInformation;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -931,14 +811,14 @@ namespace SamasatiYoga.Models
     partial void OnOccupationChanged();
     partial void OnGenderChanging(System.Nullable<char> value);
     partial void OnGenderChanged();
-    partial void OnAgeChanging(System.Nullable<int> value);
+    partial void OnAgeChanging(string value);
     partial void OnAgeChanged();
     #endregion
 		
 		public User()
 		{
-			this._BillingInformation = default(EntityRef<BillingInformation>);
 			this._UserCourses = new EntitySet<UserCourse>(new Action<UserCourse>(this.attach_UserCourses), new Action<UserCourse>(this.detach_UserCourses));
+			this._BillingInformation = default(EntityRef<BillingInformation>);
 			OnCreated();
 		}
 		
@@ -1182,8 +1062,8 @@ namespace SamasatiYoga.Models
 			}
 		}
 		
-		[Column(Storage="_Age", DbType="Int")]
-		public System.Nullable<int> Age
+		[Column(Storage="_Age", DbType="NVarChar(5)")]
+		public string Age
 		{
 			get
 			{
@@ -1199,6 +1079,19 @@ namespace SamasatiYoga.Models
 					this.SendPropertyChanged("Age");
 					this.OnAgeChanged();
 				}
+			}
+		}
+		
+		[Association(Name="User_UserCourse", Storage="_UserCourses", ThisKey="UserId", OtherKey="UserId")]
+		public EntitySet<UserCourse> UserCourses
+		{
+			get
+			{
+				return this._UserCourses;
+			}
+			set
+			{
+				this._UserCourses.Assign(value);
 			}
 		}
 		
@@ -1228,19 +1121,6 @@ namespace SamasatiYoga.Models
 					}
 					this.SendPropertyChanged("BillingInformation");
 				}
-			}
-		}
-		
-		[Association(Name="User_UserCourse", Storage="_UserCourses", ThisKey="UserId", OtherKey="UserId")]
-		public EntitySet<UserCourse> UserCourses
-		{
-			get
-			{
-				return this._UserCourses;
-			}
-			set
-			{
-				this._UserCourses.Assign(value);
 			}
 		}
 		
@@ -1277,156 +1157,252 @@ namespace SamasatiYoga.Models
 		}
 	}
 	
-	[Table(Name="dbo.Cost")]
-	public partial class Cost : INotifyPropertyChanging, INotifyPropertyChanged
+	[Table(Name="dbo.BillingInformation")]
+	public partial class BillingInformation : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _CostId;
+		private int _UserId;
 		
-		private int _CourseId;
+		private string _FirstName;
 		
-		private string _Description;
+		private string _LastName;
 		
-		private decimal _Price;
+		private string _BillingAddress;
 		
-		private EntityRef<Course> _Course;
+		private string _City;
+		
+		private string _State;
+		
+		private string _Country;
+		
+		private string _ZipPostalCode;
+		
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCostIdChanging(int value);
-    partial void OnCostIdChanged();
-    partial void OnCourseIdChanging(int value);
-    partial void OnCourseIdChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnFirstNameChanging(string value);
+    partial void OnFirstNameChanged();
+    partial void OnLastNameChanging(string value);
+    partial void OnLastNameChanged();
+    partial void OnBillingAddressChanging(string value);
+    partial void OnBillingAddressChanged();
+    partial void OnCityChanging(string value);
+    partial void OnCityChanged();
+    partial void OnStateChanging(string value);
+    partial void OnStateChanged();
+    partial void OnCountryChanging(string value);
+    partial void OnCountryChanged();
+    partial void OnZipPostalCodeChanging(string value);
+    partial void OnZipPostalCodeChanged();
     #endregion
 		
-		public Cost()
+		public BillingInformation()
 		{
-			this._Course = default(EntityRef<Course>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
-		[Column(Storage="_CostId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int CostId
+		[Column(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserId
 		{
 			get
 			{
-				return this._CostId;
+				return this._UserId;
 			}
 			set
 			{
-				if ((this._CostId != value))
+				if ((this._UserId != value))
 				{
-					this.OnCostIdChanging(value);
-					this.SendPropertyChanging();
-					this._CostId = value;
-					this.SendPropertyChanged("CostId");
-					this.OnCostIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CourseId", DbType="Int NOT NULL")]
-		public int CourseId
-		{
-			get
-			{
-				return this._CourseId;
-			}
-			set
-			{
-				if ((this._CourseId != value))
-				{
-					if (this._Course.HasLoadedOrAssignedValue)
+					if (this._User.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnCourseIdChanging(value);
+					this.OnUserIdChanging(value);
 					this.SendPropertyChanging();
-					this._CourseId = value;
-					this.SendPropertyChanged("CourseId");
-					this.OnCourseIdChanged();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
 				}
 			}
 		}
 		
-		[Column(Storage="_Description", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Description
+		[Column(Storage="_FirstName", DbType="NVarChar(50)")]
+		public string FirstName
 		{
 			get
 			{
-				return this._Description;
+				return this._FirstName;
 			}
 			set
 			{
-				if ((this._Description != value))
+				if ((this._FirstName != value))
 				{
-					this.OnDescriptionChanging(value);
+					this.OnFirstNameChanging(value);
 					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
+					this._FirstName = value;
+					this.SendPropertyChanged("FirstName");
+					this.OnFirstNameChanged();
 				}
 			}
 		}
 		
-		[Column(Storage="_Price", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Price
+		[Column(Storage="_LastName", DbType="NVarChar(50)")]
+		public string LastName
 		{
 			get
 			{
-				return this._Price;
+				return this._LastName;
 			}
 			set
 			{
-				if ((this._Price != value))
+				if ((this._LastName != value))
 				{
-					this.OnPriceChanging(value);
+					this.OnLastNameChanging(value);
 					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
+					this._LastName = value;
+					this.SendPropertyChanged("LastName");
+					this.OnLastNameChanged();
 				}
 			}
 		}
 		
-		[Association(Name="Course_Cost", Storage="_Course", ThisKey="CourseId", OtherKey="CourseId", IsForeignKey=true)]
-		public Course Course
+		[Column(Storage="_BillingAddress", DbType="NVarChar(200)")]
+		public string BillingAddress
 		{
 			get
 			{
-				return this._Course.Entity;
+				return this._BillingAddress;
 			}
 			set
 			{
-				Course previousValue = this._Course.Entity;
+				if ((this._BillingAddress != value))
+				{
+					this.OnBillingAddressChanging(value);
+					this.SendPropertyChanging();
+					this._BillingAddress = value;
+					this.SendPropertyChanged("BillingAddress");
+					this.OnBillingAddressChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_City", DbType="NVarChar(50)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this.OnCityChanging(value);
+					this.SendPropertyChanging();
+					this._City = value;
+					this.SendPropertyChanged("City");
+					this.OnCityChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="NVarChar(50)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this.OnStateChanging(value);
+					this.SendPropertyChanging();
+					this._State = value;
+					this.SendPropertyChanged("State");
+					this.OnStateChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Country", DbType="NVarChar(100)")]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this.OnCountryChanging(value);
+					this.SendPropertyChanging();
+					this._Country = value;
+					this.SendPropertyChanged("Country");
+					this.OnCountryChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ZipPostalCode", DbType="VarChar(15)")]
+		public string ZipPostalCode
+		{
+			get
+			{
+				return this._ZipPostalCode;
+			}
+			set
+			{
+				if ((this._ZipPostalCode != value))
+				{
+					this.OnZipPostalCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ZipPostalCode = value;
+					this.SendPropertyChanged("ZipPostalCode");
+					this.OnZipPostalCodeChanged();
+				}
+			}
+		}
+		
+		[Association(Name="User_BillingInformation", Storage="_User", ThisKey="UserId", OtherKey="UserId", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
 				if (((previousValue != value) 
-							|| (this._Course.HasLoadedOrAssignedValue == false)))
+							|| (this._User.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Course.Entity = null;
-						previousValue.Costs.Remove(this);
+						this._User.Entity = null;
+						previousValue.BillingInformation = null;
 					}
-					this._Course.Entity = value;
+					this._User.Entity = value;
 					if ((value != null))
 					{
-						value.Costs.Add(this);
-						this._CourseId = value.CourseId;
+						value.BillingInformation = this;
+						this._UserId = value.UserId;
 					}
 					else
 					{
-						this._CourseId = default(int);
+						this._UserId = default(int);
 					}
-					this.SendPropertyChanged("Course");
+					this.SendPropertyChanged("User");
 				}
 			}
 		}

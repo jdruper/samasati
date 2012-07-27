@@ -36,10 +36,10 @@
                 <%= Html.Encode(item.Name) %>
             </td>
             <td>
-                <%= Html.Encode(String.Format("{0:g}", item.StartDate)) %>
+                <%= Html.Encode(item.StartDate.ToString("dd/MM/yyyy")) %>
             </td>
             <td>
-                <%= Html.Encode(String.Format("{0:g}", item.EndDate)) %>
+                <%= Html.Encode(item.EndDate.ToString("dd/MM/yyyy")) %>
             </td>
             <td>
                 <%= Html.Encode(item.Location) %>

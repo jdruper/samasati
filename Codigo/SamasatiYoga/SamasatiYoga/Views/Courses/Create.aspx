@@ -9,11 +9,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <form id="form1" runat="server">
-
     <h2>Create</h2>
-
-        <% Html.RenderPartial("CourseForm"); %>
-    
+        <% Html.RenderPartial("CourseForm"); %>                  
     <div>
         <%= Html.ActionLink("Back to List", "Index") %>
     </div>

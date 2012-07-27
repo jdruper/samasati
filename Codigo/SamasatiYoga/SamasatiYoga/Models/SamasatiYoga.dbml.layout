@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 10.625" name="SamasatiYoga">
   <DataContextMoniker Name="/SamasatiYogaDataContext" />
   <nestedChildShapes>
-    <classShape Id="0a2359af-62ba-4746-bcab-ea1780d50ebd" absoluteBounds="5.5, 4.625, 2, 2.5401025390625005">
-      <DataClassMoniker Name="/SamasatiYogaDataContext/BillingInformation" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bd9722ac-27fd-44a8-abc7-cbb7f132b8ef" absoluteBounds="5.5150000000000006, 5.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="8f725f85-6424-4934-ad34-2aaaa8217ab2" absoluteBounds="9.5, 3.25, 2, 1.5785953776041666">
       <DataClassMoniker Name="/SamasatiYogaDataContext/UserCourse" />
       <nestedChildShapes>
@@ -20,30 +14,10 @@
         <elementListCompartment Id="6f2c9fec-332d-4deb-933f-cca293131ec0" absoluteBounds="0.765, 6.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="84cbd537-46cc-40b3-aa2d-459994824646" absoluteBounds="0.75, 1.875, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/SamasatiYogaDataContext/User" />
-      <nestedChildShapes>
-        <elementListCompartment Id="62eed81b-a3f4-4450-bdcf-e240dea2c21a" absoluteBounds="0.765, 2.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.75 : 7.813392314378); (10.5 : 7.813392314378); (10.5 : 4.82859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 8.06174967447917); (10.5 : 8.06174967447917); (10.5 : 4.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SamasatiYogaDataContext/Course/Course_UserCourse" />
       <nodes>
         <classShapeMoniker Id="aed0bd38-b216-496a-ad80-47ad8eb4df0c" />
-        <classShapeMoniker Id="8f725f85-6424-4934-ad34-2aaaa8217ab2" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.90465413411458); (5.5 : 4.90465413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/SamasatiYogaDataContext/User/User_BillingInformation" />
-      <nodes>
-        <classShapeMoniker Id="84cbd537-46cc-40b3-aa2d-459994824646" />
-        <classShapeMoniker Id="0a2359af-62ba-4746-bcab-ea1780d50ebd" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.84375); (9.5 : 3.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/SamasatiYogaDataContext/User/User_UserCourse" />
-      <nodes>
-        <classShapeMoniker Id="84cbd537-46cc-40b3-aa2d-459994824646" />
         <classShapeMoniker Id="8f725f85-6424-4934-ad34-2aaaa8217ab2" />
       </nodes>
     </associationConnector>
@@ -53,11 +27,37 @@
         <elementListCompartment Id="b15017fb-7529-4959-babb-95e9d94898d0" absoluteBounds="4.015, 9.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 8.16954777828275); (4.71875 : 8.16954777828275); (4.71875 : 8.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 8.4631982421875); (1.75 : 9.53929768880208); (4 : 9.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SamasatiYogaDataContext/Course/Course_Cost" />
       <nodes>
         <classShapeMoniker Id="aed0bd38-b216-496a-ad80-47ad8eb4df0c" />
         <classShapeMoniker Id="444ba4b4-3cbb-4330-bdc2-a3633ef75c37" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="adbcfa6e-8ca3-4bf4-bbce-b97d5e50078e" absoluteBounds="1.625, 2.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/SamasatiYogaDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc4be12b-ea40-488f-a8fe-d5f725ea0a97" absoluteBounds="1.6399999999999997, 2.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06be03b8-7268-4c5e-ae47-61a8d1be602a" absoluteBounds="5.75, 4.875, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/SamasatiYogaDataContext/BillingInformation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d50f8e5a-6dd7-426d-9664-4243d161f965" absoluteBounds="5.7650000000000006, 5.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 4.03929768880208); (9.5 : 4.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SamasatiYogaDataContext/User/User_UserCourse" />
+      <nodes>
+        <classShapeMoniker Id="adbcfa6e-8ca3-4bf4-bbce-b97d5e50078e" />
+        <classShapeMoniker Id="8f725f85-6424-4934-ad34-2aaaa8217ab2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 5.34215413411458); (5.75 : 5.34215413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SamasatiYogaDataContext/User/User_BillingInformation" />
+      <nodes>
+        <classShapeMoniker Id="adbcfa6e-8ca3-4bf4-bbce-b97d5e50078e" />
+        <classShapeMoniker Id="06be03b8-7268-4c5e-ae47-61a8d1be602a" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

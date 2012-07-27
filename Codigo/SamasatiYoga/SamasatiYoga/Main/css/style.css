@@ -21,6 +21,7 @@ object { vertical-align:top; outline:none}
 .fleft{ float:left}
 .fright{ float:right}
 .container {	overflow:hidden; width: 100%;}
+.containerColumn { width:310px;}
 a img{ border:0}
 img{ vertical-align:top;  }
 fieldset{ border:none}
@@ -148,7 +149,7 @@ footer .bot-right{ background: url(../images/bot_right.gif) top right no-repeat;
 footer ul{margin:0; padding:0 0 0 19px; list-style:none; float:left; position:relative}
 footer ul li{ margin:0; display:inline;}
 footer ul li a{text-decoration:none; display:block; float:left; padding:0 7px 0 0} 
-footer ul li a:hover { text-decoration:none;0 }
+footer ul li a:hover { text-decoration:none; }
 	
 .indent-2{ position:relative; padding-left:20px; float:left}
 .rowElem{ height:33px; background:url(../images/bg_input1.gif) top left no-repeat}
@@ -187,3 +188,31 @@ textarea{
 	padding-bottom:2px;
 	margin-bottom:11px;
 	overflow:auto}
+.radioBtn
+{
+	width:17px; 
+	vertical-align:text-bottom;
+}
+.ddl
+{
+	height:30px;
+	font-size:smaller;
+}
+.divHeight
+{
+	height:30px;
+}
+.chk
+{
+	width:20px;
+}
+.btnRegister
+{
+	cursor:pointer; 
+	height:30px; 
+	width:120px; 
+	font-size:large; 
+	color:#117F89; 
+	margin-left:-30px; 
+	text-decoration:underline;
+}

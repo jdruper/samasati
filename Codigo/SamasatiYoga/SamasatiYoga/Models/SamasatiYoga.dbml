@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="SamasatiYogaDB" Class="SamasatiYogaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=KIARA\SQLEXPRESS;Initial Catalog=SamasatiYogaDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SamasatiYogaDBConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.BillingInformation" Member="BillingInformations">
-    <Type Name="BillingInformation">
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ZipPostalCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="CardNumber" Type="System.Data.Linq.Binary" DbType="Binary(300)" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="User_BillingInformation" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.UserCourses" Member="UserCourses">
     <Type Name="UserCourse">
       <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -37,6 +23,15 @@
       <Association Name="Course_Cost" Member="Costs" ThisKey="CourseId" OtherKey="CourseId" Type="Cost" />
     </Type>
   </Table>
+  <Table Name="dbo.Cost" Member="Costs">
+    <Type Name="Cost">
+      <Column Name="CostId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Course_Cost" Member="Course" ThisKey="CourseId" OtherKey="CourseId" Type="Course" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.[User]" Member="Users">
     <Type Name="User">
       <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -51,18 +46,22 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Occupation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="User_BillingInformation" Member="BillingInformation" ThisKey="UserId" OtherKey="UserId" Type="BillingInformation" Cardinality="One" />
+      <Column Name="Age" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
       <Association Name="User_UserCourse" Member="UserCourses" ThisKey="UserId" OtherKey="UserId" Type="UserCourse" />
+      <Association Name="User_BillingInformation" Member="BillingInformation" ThisKey="UserId" OtherKey="UserId" Type="BillingInformation" Cardinality="One" />
     </Type>
   </Table>
-  <Table Name="dbo.Cost" Member="Costs">
-    <Type Name="Cost">
-      <Column Name="CostId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Association Name="Course_Cost" Member="Course" ThisKey="CourseId" OtherKey="CourseId" Type="Course" IsForeignKey="true" />
+  <Table Name="dbo.BillingInformation" Member="BillingInformations">
+    <Type Name="BillingInformation">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ZipPostalCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="User_BillingInformation" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
