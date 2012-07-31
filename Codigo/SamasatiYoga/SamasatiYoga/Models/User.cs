@@ -11,6 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Data.Linq;
+using System.Text.RegularExpressions;
 
 namespace SamasatiYoga.Models
 {
@@ -72,16 +73,56 @@ namespace SamasatiYoga.Models
                 yield return new RuleViolation("Country is required", "Country");
 
             if (String.IsNullOrEmpty(ZipPostalCode))
+            {
                 yield return new RuleViolation("Zip/Postal Code is required", "ZipPostalCode");
+            }
+            else
+            {
+                string pattern = @"^\d{5}$|^\d{5}-\d{4}$";
+                if (!RegExMatch(ZipPostalCode, pattern))
+                {
+                    yield return new RuleViolation("The supplied Zip/Postal Code is invalid", "ZipPostalCode");
+                }
+            }
 
             if (String.IsNullOrEmpty(PhoneNumber))
+            {
                 yield return new RuleViolation("Phone Number is required", "PhoneNumber");
+            }
+            else
+            {
+                string pattern = @"^((\(\d{3}\) ?)|(\d{3}-?))?\d{3,4}-?\d{4}$";
+                if (!RegExMatch(PhoneNumber, pattern))
+                {
+                    yield return new RuleViolation("The supplied Phone Number is invalid", "PhoneNumber");
+                }
+            }
 
             if (String.IsNullOrEmpty(Email))
+            {
                 yield return new RuleViolation("Email Address is required", "Email");
-            
-            if (String.IsNullOrEmpty(Email))
+            }
+            else
+            {
+                string pattern = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+                if (!RegExMatch(Email, pattern))
+                {
+                    yield return new RuleViolation("The supplied Email Address is invalid", "Email");
+                }
+            }
+
+            if (String.IsNullOrEmpty(ReEmail))
+            {
                 yield return new RuleViolation("Confirmation Email Address is required", "ReEmail");
+            }
+            else
+            {
+                string pattern = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+                if (!RegExMatch(ReEmail, pattern))
+                {
+                    yield return new RuleViolation("The supplied Confirmation Email Address is invalid", "ReEmail");
+                }
+            }
 
             if (!String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(ReEmail))
             {
@@ -120,16 +161,44 @@ namespace SamasatiYoga.Models
                 yield return new RuleViolation("Billing Country is required", "BillingInformation.Country");
 
             if (String.IsNullOrEmpty(BillingInformation.ZipPostalCode))
+            {
                 yield return new RuleViolation("Billing Zip/Postal Code is required", "BillingInformation.ZipPostalCode");
+            }
+            else
+            {
+                string pattern = @"^\d{5}$|^\d{5}-\d{4}$";
+                if (!RegExMatch(BillingInformation.ZipPostalCode, pattern))
+                {
+                    yield return new RuleViolation("The supplied Billing Zip/Postal Code is invalid", "BillingInformation.ZipPostalCode");
+                }
+            }
 
             if (String.IsNullOrEmpty(CardNumber))
+            {
                 yield return new RuleViolation("Card Number is required", "CardNumber");
-
-            if (String.IsNullOrEmpty(ExpirationDate))
-                yield return new RuleViolation("ExpirationDate is required", "ExpirationDate");
+            }
+            else
+            {
+                string pattern = @"^((4\d{3})|(5[1-5]\d{2})|(6011))-?\d{4}-?\d{4}-?\d{4}|3[4,7][\d\s-]{15}$";
+                if (!RegExMatch(CardNumber, pattern))
+                {
+                    yield return new RuleViolation("The supplied Card Number is invalid", "CardNumber");
+                }
+            }
 
             if (String.IsNullOrEmpty(CW2))
+            {
                 yield return new RuleViolation("CW2 is required", "CW2");
+            }
+            else
+            {
+                string pattern = @"^\d{3,4}$";                                     
+                if (!RegExMatch(CW2, pattern))
+                {
+                    yield return new RuleViolation("The CW2 has to be 3 or 4 digits long", "CW2");
+                }
+            }
+            
             
             yield break;
         }
@@ -138,6 +207,12 @@ namespace SamasatiYoga.Models
         {
             if (!IsValid)
                 throw new ApplicationException("Rule violations prevent saving");
+        }
+
+        private bool RegExMatch(string value, string pattern)
+        {
+            Match match = Regex.Match(value, pattern);
+            return match.Success;
         }
 
     }

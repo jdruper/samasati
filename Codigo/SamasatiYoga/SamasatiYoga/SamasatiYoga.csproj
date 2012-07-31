@@ -200,6 +200,7 @@
     <Content Include="Views\Courses\NotFound.aspx" />
     <Content Include="Views\Courses\RYTCourses.aspx" />
     <Content Include="Views\Users\Register.aspx" />
+    <Content Include="Views\Users\RegisterResponse.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Scripts\jquery-1.4.1.js" />

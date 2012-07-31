@@ -58,6 +58,8 @@ function onClickRemoveCost(cost) {
 
 function onBlurCost(txt) {
 
+    if (txt.value == "")
+        txt.value = "0";
     if (!isWhole(txt.value)) {
         txt.value = "0";
     }

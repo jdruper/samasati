@@ -83,7 +83,7 @@
                         <div class="indent">
                         <% using (Html.BeginForm())
                            {%>
-                            <%= Html.ValidationSummary(false) %>
+                            <%= Html.ValidationSummary(false, "Please fix the following errors to continue:", new Dictionary<string, object> { {"style", "font-size:smaller"}})%>
                             <fieldset>
                                 <input type="hidden" id="hdnFieldData" value="<%=ViewData["fieldData"] as String %>" />
                                 <h2 class="color1">Personal Information</h2>
@@ -412,8 +412,38 @@
                                 <div>
                                     Expiration Date:
                                 </div>
-                                <div class="rowElem">
-                                    <%= Html.TextBoxFor(model => model.ExpirationDate) %>
+                                <div class="ddl">
+                                    <select id="ddlMonth" name="ExpirationMonth">
+                                        <option value="01">January</option>
+                                        <option value="02">February</option>
+                                        <option value="03">March</option>
+                                        <option value="04">April</option>
+                                        <option value="05">May</option>
+                                        <option value="06">June</option>
+                                        <option value="07">July</option>
+                                        <option value="08">August</option>
+                                        <option value="09">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                    /
+                                    <select id="ddlYear" name="ExpirationYear">
+                                        <option value="12">2012</option>
+                                        <option value="13">2013</option>                                        
+                                        <option value="14">2014</option>
+                                        <option value="15">2015</option>
+                                        <option value="16">2016</option>
+                                        <option value="17">2017</option>
+                                        <option value="18">2018</option>
+                                        <option value="19">2019</option>
+                                        <option value="20">2020</option>
+                                        <option value="21">2021</option>
+                                        <option value="22">2022</option>
+                                        <option value="23">2023</option>
+                                        <option value="24">2024</option>
+                                        <option value="25">2025</option>
+                                    </select>
                                     <%= Html.ValidationMessage("ExpirationDate","*")%>                                    
                                 </div>
                                 <div>
