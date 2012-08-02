@@ -13,6 +13,7 @@ namespace SamasatiYoga.Controllers
     public class UsersController : Controller
     {
         UserRepository userRepository = new UserRepository();
+        int courseId = 0;
 
         //
         // GET: /Users/
@@ -23,27 +24,31 @@ namespace SamasatiYoga.Controllers
         }
 
         public ActionResult Register(int id)
-        {
+        {            
             var course = (new CourseRepository()).GetCourse(id);
-            var user = new User { State = "0", Gender='A' };
+            var user = new User { State = "0", Gender = 'A', CurrentCourse = id };
 
             ViewData.Add("costs", course.Costs);
             ViewData.Add("fieldData", "0,,,,0");
+            ViewData.Add("courseId", id.ToString());
             return View(user);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Register(User user, FormCollection collection)
         {
+            string courseId = "";
             try
             {
+                courseId = Request["CourseId"];
                 user.ExpirationDate = String.Format("{0}{1}", Request["ExpirationMonth"].ToString(), Request["ExpirationYear"].ToString());
+                
                 var response = "";
                 if (user.IsValid)
                 {
+                    response = Authorize(user, Convert.ToInt32(courseId));
                     userRepository.Add(user);
                     userRepository.Save();
-                    response = Authorize(user);
                 }
                 else
                 {
@@ -56,13 +61,14 @@ namespace SamasatiYoga.Controllers
             catch
             {
                 var fieldData = string.Format("{0},{1},{2},{3},{4}", user.State ?? "", user.Gender ?? '0', user.Age ?? "", user.SelectedPrice, user.BillingInformation.State ?? "0");
-                ViewData.Add("fieldData", fieldData);                
+                ViewData.Add("fieldData", fieldData);
+                ViewData.Add("courseId", courseId);
                 ModelState.AddRuleViolations(user.GetRuleViolations());
                 return View(user);
             }
         }
 
-        private String Authorize(User user)
+        private String Authorize(User user, int courseId)
         {
             try
             {
@@ -147,24 +153,74 @@ namespace SamasatiYoga.Controllers
                 // The split character specified here must match the delimiting character specified above
                 String[] response_array = post_response.Split('|');
 
-                // the results are output to the screen in the form of an html numbered list.
-                var response = "<p>Transaction Output:\n";
-                //foreach (string value in response_array)
-                //{                
-                response += response_array[3];
-                //}
-                response += "</p>";
-                // individual elements of the array could be accessed to read certain response
-                // fields.  For example, response_array[0] would return the Response Code,
-                // response_array[2] would return the Response Reason Code.
-                // for a list of response fields, please review the AIM Implementation Guide
-
-                return response;
+                user.UserCourses.Add(new UserCourse { AuthResponse = post_response });
+                
+                return ValidateResponse(user, courseId, response_array[0], response_array[2], response_array[3], response_array[6], response_array[7],
+                    response_array[8], response_array[9], response_array[23], response_array[50]);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        private string ValidateResponse(User user, int courseId, string responseCode, string responseReasonCode, string responseReasonText, string transactionID,
+             string invoiceNumber, string descripcion, string amount, string costumerEmail, string accountNumber)
+        {
+            var declinedResponseCodes = new string[] { "6", "7", "8", "11", "17", "18", "19", "20", "21", "22", "23", "25", "26", "27", 
+                "44", "45", "57", "58", "59", "60", "61", "62", "63", "78", "117" };
+            var response = "<h2>Transaction Output</h2>\n";
+
+            if (responseCode == "1")
+            {
+                response += "<p>Your transaction has been approved!</p>";
+                response += "<p>" + descripcion + " has been successfully charged to your account.</p>";
+                response += "<p>Your Transaction ID is: " + transactionID + ".</p>";
+                response += "<p>Your Invoice Number is: " + invoiceNumber + ".</p>";
+                response += "<p>The amount of: " + amount + " has been charged to this account: " + accountNumber + ".</p>";
+                response += "<p>A confirmation Email with this data will be sent to: " + costumerEmail + ".</p>";
+               
+                user.UserCourses[0].UserId = user.UserId;
+                user.UserCourses[0].CourseId = courseId;
+                user.UserCourses[0].Price = user.SelectedPrice;
+                user.UserCourses[0].PaymentDate = DateTime.Now;               
+            }
+            else if (responseCode == "2")
+            {
+                //declined no hay mucho q hacer mas q decir q fue declined, please check your data and try again
+                response += "<p>Your transacion has been declined, please check your data and try again.<p>";
+                response += "<p>If the problem persists, please contact us.<p>";
+
+                user.UserCourses.Clear();
+
+            }
+            else if (responseCode == "3")
+            {
+                response += "<p>There was an error with your transacion, the error is the following:<p>";
+                if (declinedResponseCodes.Contains(responseReasonCode))
+                {
+                    response += "<p>" + responseReasonText + "</p>";
+                }
+                else
+                {
+                    response += "<p>There is an internal error with your transaction, please try again.</p>";
+                }
+                response += "<p>If the problem persists, please contact us.<p>";
+
+                user.UserCourses.Clear();
+            }
+            else if (responseCode == "4")
+            {
+                response += "<p>Your transaction has been held for approval.<p>";
+                response += "<p>Please contact us for further detail.<p>";
+
+                user.UserCourses[0].UserId = user.UserId;
+                user.UserCourses[0].CourseId = courseId;
+                user.UserCourses[0].Price = user.SelectedPrice;
+                user.UserCourses[0].PaymentDate = DateTime.Now;
+            }
+            
+            return response;
         }
 
     }

@@ -52,6 +52,12 @@ namespace SamasatiYoga.Models
             set;
         }
 
+        public int CurrentCourse
+        {
+            get;
+            set;
+        }
+
         public IEnumerable<RuleViolation> GetRuleViolations()
         {
             if (String.IsNullOrEmpty(FirstName))

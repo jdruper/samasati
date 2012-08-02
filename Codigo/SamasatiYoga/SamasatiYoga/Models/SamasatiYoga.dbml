@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="SamasatiYogaDB" Class="SamasatiYogaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=KIARA\SQLEXPRESS;Initial Catalog=SamasatiYogaDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SamasatiYogaDBConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.UserCourses" Member="UserCourses">
-    <Type Name="UserCourse">
-      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PaymentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Association Name="Course_UserCourse" Member="Course" ThisKey="CourseId" OtherKey="CourseId" Type="Course" IsForeignKey="true" />
-      <Association Name="User_UserCourse" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Course" Member="Courses">
     <Type Name="Course">
       <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -19,8 +9,8 @@
       <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Location" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Details" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
-      <Association Name="Course_UserCourse" Member="UserCourses" ThisKey="CourseId" OtherKey="CourseId" Type="UserCourse" />
       <Association Name="Course_Cost" Member="Costs" ThisKey="CourseId" OtherKey="CourseId" Type="Cost" />
+      <Association Name="Course_UserCourse" Member="UserCourses" ThisKey="CourseId" OtherKey="CourseId" Type="UserCourse" />
     </Type>
   </Table>
   <Table Name="dbo.Cost" Member="Costs">
@@ -47,8 +37,8 @@
       <Column Name="Occupation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Column Name="Age" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
-      <Association Name="User_UserCourse" Member="UserCourses" ThisKey="UserId" OtherKey="UserId" Type="UserCourse" />
       <Association Name="User_BillingInformation" Member="BillingInformation" ThisKey="UserId" OtherKey="UserId" Type="BillingInformation" Cardinality="One" />
+      <Association Name="User_UserCourse" Member="UserCourses" ThisKey="UserId" OtherKey="UserId" Type="UserCourse" />
     </Type>
   </Table>
   <Table Name="dbo.BillingInformation" Member="BillingInformations">
@@ -62,6 +52,17 @@
       <Column Name="Country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ZipPostalCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Association Name="User_BillingInformation" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserCourses" Member="UserCourses">
+    <Type Name="UserCourse">
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PaymentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="AuthResponse" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Course_UserCourse" Member="Course" ThisKey="CourseId" OtherKey="CourseId" Type="Course" IsForeignKey="true" />
+      <Association Name="User_UserCourse" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

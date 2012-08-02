@@ -86,6 +86,7 @@
                             <%= Html.ValidationSummary(false, "Please fix the following errors to continue:", new Dictionary<string, object> { {"style", "font-size:smaller"}})%>
                             <fieldset>
                                 <input type="hidden" id="hdnFieldData" value="<%=ViewData["fieldData"] as String %>" />
+                                <input type="hidden" id="hdnCourseId" name="CourseId" value="<%=ViewData["courseId"] as String %>" />
                                 <h2 class="color1">Personal Information</h2>
                               <article>
                                   <div class="container fleft containerColumn">
