@@ -3,3 +3,8 @@ C:\Users\Jose\Desktop\Freelance\Samasati\Repository\samasati\Codigo\SamasatiYoga
 C:\Users\Jose\Desktop\Freelance\Samasati\Repository\samasati\Codigo\SamasatiYoga\SamasatiYoga\bin\SamasatiYoga.pdb
 C:\Users\Jose\Desktop\Freelance\Samasati\Repository\samasati\Codigo\SamasatiYoga\SamasatiYoga\obj\Debug\SamasatiYoga.dll
 C:\Users\Jose\Desktop\Freelance\Samasati\Repository\samasati\Codigo\SamasatiYoga\SamasatiYoga\obj\Debug\SamasatiYoga.pdb
+C:\Users\fgarcia\Documents\GitHub\samasati\Codigo\SamasatiYoga\SamasatiYoga\bin\SamasatiYoga.dll
+C:\Users\fgarcia\Documents\GitHub\samasati\Codigo\SamasatiYoga\SamasatiYoga\bin\SamasatiYoga.pdb
+C:\Users\fgarcia\Documents\GitHub\samasati\Codigo\SamasatiYoga\SamasatiYoga\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\fgarcia\Documents\GitHub\samasati\Codigo\SamasatiYoga\SamasatiYoga\obj\Debug\SamasatiYoga.dll
+C:\Users\fgarcia\Documents\GitHub\samasati\Codigo\SamasatiYoga\SamasatiYoga\obj\Debug\SamasatiYoga.pdb

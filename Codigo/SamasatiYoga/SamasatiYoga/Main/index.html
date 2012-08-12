@@ -31,6 +31,13 @@
             fo.addParam("scale", "noscale");
       fo.write("head");
     </script>
+    
+<script language="JavaScript">
+    function resetForm() {
+        document.getElementById("formIndex").reset();
+    } 
+</script>
+    
     <div id="main">
         <header>
             
@@ -67,10 +74,10 @@
                     <aside>
                         <h2>Services</h2>
                         <div class="p1 container1"><ul class="list">
-                            <li><a href="http://samasatiyoga.com/tempSite/index-2.html">200 RYT Professional Trainings</a></li>
-                            <li><a href="http://www.hariomyogaschool.com/500-hr-tt-costa-rica-registration-form">500 RYT Professional Trainings</a></li>
-                            <li><a href="http://samasatiyoga.com/tempSite/index-4.html">Yoga retreats</a></li>
-                            <li><a href="http://samasatiyoga.com/tempSite/index-8.html">Yoga Classes</a></li>
+                            <li><a href="index-2.html">200 RYT Professional Trainings</a></li>
+                            <li><a target="_blank" href="http://www.hariomyogaschool.com/500-hr-tt-costa-rica-registration-form">500 RYT Professional Trainings</a> </li>
+                            <li><a href="index-4.html">Yoga retreats</a></li>
+                            <li><a href="index-8.html">Yoga Classes</a></li>
                         </ul></div>
                         <h2>Our Allies</h2>
                         <p>
@@ -80,11 +87,11 @@
                         <!--<h4>Hari om </h4>-->
                         <!--<p class="p3">Info and banner</p>-->
                         <p>
-                        <a href="http://www.hariomyogaschool.com/" target="_blank"> <img alt="Hari Om Yoga School" src="images/Banner_Hariom.jpg"/> </a> 
+                        <a href="http://www.hariomyogaschool.com" target="_blank"> <img alt="Hari Om Yoga School" src="images/Banner_Hariom.jpg"/> </a> 
                         </p>
                         
                         <p>
-                        <a href="http://http://www.peakbeings.com//" target="_blank"> <img alt="Peak Beings" src="images/Banner_PeakBeings.jpg"/> </a> 
+                        <a href="http://www.peakbeings.com" target="_blank"> <img alt="Peak Beings" src="images/Banner_PeakBeings.jpg"/> </a> 
                         </p>
                         
                         <p>
@@ -97,23 +104,27 @@
                         <p> <br/> </p>
                         <h2>Join our mailing list</h2>
                         <!--<p class="p3">Detailed information about it</p>-->
-                        <form action= id="form">
+                        <form id="formIndex">
                           <fieldset>
                           <div class="rowElem">
-                             <input type="text" value="Name:" onBlur="if(this.value=='') this.value='Name:'" onFocus="if(this.value =='Name:' ) this.value=''" >
+                             <input type="text" value="Name:" onblur="if(this.value=='') this.value='Name:'" onfocus="if(this.value =='Name:' ) this.value=''" >
                           </div>
                           <div class="rowElem">
-                             <input type="email" value="E-mail:" onBlur="if(this.value=='') this.value='E-mail:'" onFocus="if(this.value =='E-mail:' ) this.value=''" >
+                             <input type="email" value="E-mail:" onblur="if(this.value=='') this.value='E-mail:'" onfocus="if(this.value =='E-mail:' ) this.value=''" >
                           </div>
                           <div class="rowElem">
-                             <input type="text" value="Mailing adress:" onBlur="if(this.value=='') this.value='Mailing adress:'" onFocus="if(this.value =='Mailing adress:' ) this.value=''" >
+                             <input type="text" value="Mailing adress:" onblur="if(this.value=='') this.value='Mailing adress:'" onfocus="if(this.value =='Mailing adress:' ) this.value=''" >
                           </div>
 <!--                          <div class="rowElem1">
                              <textarea rows="40" cols="30"  onblur="if(this.value=='') this.value='Message:'" onFocus="if(this.value =='Message:' ) this.value=''"  >Message:</textarea>
                           </div>                          
 -->                          
                             <div class="fright">
-                          		<div class="container"><a href="#" onClick="document.getElementById('form').reset()" class="link">clear</a> &nbsp; &nbsp;<a href="" onClick="document.getElementById('form').submit()" class="link">send</a></div>
+                          		<div class="container">
+                          		<!--<a href="#" onClick="formReset()" class="link">clear</a> &nbsp; &nbsp;-->
+                          		<a class="link" onclick="resetForm()" >clear</a>&nbsp; &nbsp;
+                          		<a class="link" onclick="document.getElementById('formIndex').submit()">send</a></div>
+                          		<!--document.getElementById('formIndex').reset()-->
                           </div>
                           </fieldset>
                        </form>
@@ -189,7 +200,7 @@
                                                                         <h4>You are invited to explore your practice of yoga, immerse yourself in the Costa Rican culture, and rest and rejuvenate in the beautiful setting of the South Caribbean.</h4>
                                                                         <p>View upcoming Yoga Retreats</p>
                                                                         <div class="fleft">
-                                                                        <a href="http://samasatiyoga.com/tempSite/index-4.html" class="link">details</a> &nbsp; &nbsp; &nbsp;
+                                                                        <a href="index-4.html" class="link">details</a> &nbsp; &nbsp; &nbsp;
                                                                         </div>
                                                                         <!--<div class="indent2">
                                                                         <a href="#"><img alt="" src="images/but1.gif" class="alignMiddle" /></a>
@@ -217,13 +228,13 @@
                 <div class="bot-right">
                     <div class="inside">
                         <div class="fright"><!--{%FOOTER_LINK}--></div>
-                        <!--<div class="fleft"><span>Hatha</span> &nbsp;&copy; 2010 &nbsp;| &nbsp;<a href="index-7.html">Privacy policy</a></div>-->
-                        <!--<ul>
-                            <li><a href="#"><img alt="" src="images/icon1.gif" /></a></li>
-                            <li><a href="#"><img alt="" src="images/icon2.gif" /></a></li>
-                            <li><a href="#"><img alt="" src="images/icon3.gif" /></a></li>
-                            <li><a href="#"><img alt="" src="images/icon4.gif" /></a></li>
-                        </ul>-->
+                        <div class="fleft"><span>samasatiyoga.com</span> &nbsp;&copy; 2012 &nbsp;| &nbsp;</div>
+                        <ul>
+                            <li><a href="http://www.facebook.com/pages/Samasati/111718732178595"><img alt="" src="images/icon1.gif" /></a></li>
+                            <!--<li><a href="#"><img alt="" src="images/icon2.gif" /></a></li>-->
+                            <li><a href="https://twitter.com/Samasati"><img alt="" src="images/icon3.gif" /></a></li>
+                            <li><a href="http://www.stumbleupon.com"><img alt="" src="images/icon4.gif" /></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>   
