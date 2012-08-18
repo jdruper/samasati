@@ -11,7 +11,7 @@ namespace SamasatiYoga.Controllers
     {
         public ActionResult Index()
         {
-            ViewData["Message"] = "Welcome to ASP.NET MVC!";
+            ViewData["Message"] = "Welcome to Samasati Yoga";
 
             return View();
         }

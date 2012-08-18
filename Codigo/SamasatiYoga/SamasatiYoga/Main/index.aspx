@@ -1,57 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title></title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-  <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-  <script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
-  <script type="text/javascript" src="js/cufon-yui.js"></script>
-  <script type="text/javascript" src="js/cufon-replace.js"></script>  
-<script type="text/javascript" src="js/Caviar_Dreams_500.font.js"></script>
-<script type="text/javascript" src="js/flashobject.js"></script>
-  <!--[if lt IE 7]>
-     <script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script.js"></script>
-  <![endif]-->
-  <!--[if lt IE 9]>
-  	<script type="text/javascript" src="js/html5.js"></script>
-  <![endif]-->
-</head>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="SamasatiYoga.Main.index" %>
 
-<body id="page1">
-<div class="tail-top">
-    <div id="head">
-        <div class="alignCenter"><a href="http://www.adobe.com/go/EN_US-H-GET-FLASH"><img src="http://www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="" /></a></div>
-    </div>
-    <script type="text/javascript">
-      var fo = new FlashObject("flash/logo_v8.swf", "head", "100%", "141", "7", "");
-      fo.addParam("quality", "high");
-                fo.addParam("wmode", "transparent");
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome to Samasati Yoga</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+
+    <script type="text/javascript" src="js/cufon-replace.js"></script>
+
+    <script type="text/javascript" src="js/Caviar_Dreams_500.font.js"></script>
+
+    <script type="text/javascript" src="js/flashobject.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="head">
+            <div class="alignCenter">
+                <a href="http://www.adobe.com/go/EN_US-H-GET-FLASH">
+                    <img src="http://www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png"
+                        alt="" /></a></div>
+        </div>
+
+        <script type="text/javascript">
+            var fo = new FlashObject("flash/logo_v8.swf", "head", "100%", "141", "7", "");
+            fo.addParam("quality", "high");
+            fo.addParam("wmode", "transparent");
             fo.addParam("scale", "noscale");
-      fo.write("head");
-    </script>
-    
-<script language="JavaScript">
-    function resetForm() {
-        document.getElementById("formIndex").reset();
-    } 
-</script>
-    
-    <div id="main">
-        <header>
-            
+            fo.write("head");
+        </script>
+
+        <script language="JavaScript">
+            function resetForm() {
+                document.getElementById("formIndex").reset();
+            } 
+        </script>
+
+        <div id="main">
+            <header>
             <div class="inside">
                 <div class="container">
                     <div id="head1">
                         <div class="alignCenter"><a href="http://www.adobe.com/go/EN_US-H-GET-FLASH"><img src="http://www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="" /></a></div>
                     </div>
                     <script type="text/javascript">
-                      var fo = new FlashObject("flash/menu_v8.swf?button=1", "head1", "100%", "122", "7", "");
-                      fo.addParam("quality", "high");
-                                fo.addParam("wmode", "transparent");
-                            fo.addParam("scale", "noscale");
-                      fo.write("head1");
+                        var fo = new FlashObject("flash/menu_v8.swf?button=1", "head1", "100%", "122", "7", "");
+                        fo.addParam("quality", "high");
+                        fo.addParam("wmode", "transparent");
+                        fo.addParam("scale", "noscale");
+                        fo.write("head1");
                     </script>
                 </div>                              
                 <div class=" container">
@@ -59,22 +63,25 @@
                         <div class="alignCenter"><a href="http://www.adobe.com/go/EN_US-H-GET-FLASH"><img src="http://www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="" /></a></div>
                     </div>
                     <script type="text/javascript">
-                      var fo = new FlashObject("flash/header_v8.swf", "head2", "100%", "351", "7", "");
-                      fo.addParam("quality", "high");
-                                fo.addParam("wmode", "transparent");
-                            fo.addParam("scale", "noscale");
-                      fo.write("head2");
+                        var fo = new FlashObject("flash/header_v8.swf", "head2", "100%", "351", "7", "");
+                        fo.addParam("quality", "high");
+                        fo.addParam("wmode", "transparent");
+                        fo.addParam("scale", "noscale");
+                        fo.write("head2");
                     </script>
                 </div>               
             </div>
         </header>
-        <div class="bg-cont">
-            <div class="inside">
-                <div class="container">
-                    <aside>
+            <div class="bg-cont">
+                <div class="inside">
+                    <div class="container">
+                        <aside>
                         <h2>Services</h2>
                         <div class="p1 container1"><ul class="list">
                             <li><a href="index-2.html">200 RYT Professional Trainings</a></li>
+                            <li><a target="_blank" href="http://www.hariomyogaschool.com/500-hr-tt-costa-rica-registration-form">500 RYT Professional Trainings</a> </li>
+                            <li><a href="index-4.html">Yoga retreats</a></li>
+                            <li><a href="index-8.html">Yoga Classes</a></li>
                         </ul></div>
                         <h2>Our Allies</h2>
                         <p>
@@ -99,11 +106,43 @@
                         <!--<p class="p2"><a href="#">01.06.2012</a></p>-->
                                           
                         <p> <br/> </p>
+                        <h2>Join our mailing list</h2>
+                        <!--<p class="p3">Detailed information about it</p>-->
+                        <form id="formIndex">
+                          <fieldset>
+                          <div class="rowElem">
+                             <asp:TextBox  ID="txtName"  runat="server" Text="Name: "  onblur="if(this.value=='') this.value='Name: '" onfocus="if(this.value =='Name: ' ) this.value=''"></asp:TextBox>
+                          </div>
+                          <div class="rowElem">
+                             <asp:TextBox ID="txtEmail" runat="server" Text="E-mail: " onblur="if(this.value=='') this.value='E-mail:'" onfocus="if(this.value =='E-mail:' ) this.value=''" ></asp:TextBox>
+                          </div>
+
+<!--                          <div class="rowElem1">
+                             <textarea rows="40" cols="30"  onblur="if(this.value=='') this.value='Message:'" onFocus="if(this.value =='Message:' ) this.value=''"  >Message:</textarea>
+                          </div>                          
+-->                          
+                            <div class="fright">
+                          		<div class="container">
+                          		<!--<a href="#" onClick="formReset()" class="link">clear</a> &nbsp; &nbsp;-->
+                          		<a class="link" onclick="resetForm()" >clear</a>&nbsp; &nbsp;
+                                <asp:LinkButton class="link" ID="btnSubmit" runat="server"  OnClick="btnSubmit_Click">send</asp:LinkButton>
+                                </div>
+                          		<!--document.getElementById('formIndex').reset()--><br />
+                          		
+                          </div>
+                          </fieldset>
+                       </form>
                         <!--<a href="#" class="link">details</a>-->
                     </aside>
-                    <section id="content">
+                        <section id="content">
                         <div class="indent">
-                            <h2 class="color1">HTML ------ SHOULD BE ASP ------ </h2>
+                            <h2 class="color1">Welcome to Samasati Yoga</h2>
+                            <article>
+                               <p>The longest established Yoga Center on the Caribbean side of Costa Rica.</p>
+                               <p>Perched on a hill-top, with a spectacular view of the Caribbean Sea, <a href="http://www.samasati.com" target="_blank">Samasati</a> is an astoundingly conducive environment that supports retreats,workshops and trainings to be transformative, nurturing and unforgettable. <a href="http://www.samasati.com" target="_blank" >Samasati</a> offers an extraordinary setting for all who are looking to sustainable living, personal transformation and wellness of body, mind and spirit as well as all who are looking to transform their passion for yoga into a profession becoming trained Yoga teachers.</p>
+<!--                           <br>    <br>.--> 
+<!--                                <p class="p3"><a href="#" class="link">more info</a></p>-->
+                            </article>
                         </div> 
                         <div class="box">
                             <div class="border-top">
@@ -121,8 +160,9 @@
                                                                     <!--<h4>Title 
                                                                     <br>
                                                                     linea2 </h4>-->
-                                                                    <p>
-                                                                       <br>
+                                                                    <p>Samasati selects its School partners very carefully to ensure the offerings of comprehensive yoga teacher trainings that integrate
+                                                                       not just the physical postures but also philosophy, meditation, pranayama and the complete yogic personal and social code of ethics.
+                                                                       Every School is Yoga Alliance Registered.  You will receive the Yoga Alliance certification and be included in its Yoga Teacher directory.<br>
                                                                     <h4>Make your passion your profession while reclaiming your connection with nature!</h4>
                                                                     <br>
                                                                     <p>View Professional trainings upcoming sessions</p>
@@ -184,10 +224,10 @@
                             </div>
                         </div>
                     </section>
+                    </div>
                 </div>
             </div>
-        </div>
-        <footer>      
+            <footer>      
             <div class="bot-left">
                 <div class="bot-right">
                     <div class="inside">
@@ -197,15 +237,14 @@
                             <li><a href="http://www.facebook.com/pages/Samasati/111718732178595"><img alt="" src="images/icon1.gif" /></a></li>
                             <!--<li><a href="#"><img alt="" src="images/icon2.gif" /></a></li>-->
                             <li><a href="https://twitter.com/Samasati"><img alt="" src="images/icon3.gif" /></a></li>
-                            <li><a href="http://www.stumbleupon.com"><img alt="" src="images/icon4.gif" /></a></li>
+                            <li><a href="http://www.stumbleupon.com/submit?url=www.samasatiyoga.com&title=Samasati Yoga"><img alt="" src="images/icon4.gif" /></a></li>
                         </ul>
                     </div>
                 </div>
             </div>   
         </footer>
+        </div>
     </div>
-</div>
-    
-  <script type="text/javascript"> Cufon.now(); </script>
+    </form>
 </body>
 </html>

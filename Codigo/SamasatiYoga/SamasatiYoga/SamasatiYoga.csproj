@@ -72,6 +72,27 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ControllerHelpers.cs" />
+    <Compile Include="Main\index-6.aspx.cs">
+      <DependentUpon>index-6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main\index-6.aspx.designer.cs">
+      <DependentUpon>index-6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\SignUpEmail.aspx.cs">
+      <DependentUpon>SignUpEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main\SignUpEmail.aspx.designer.cs">
+      <DependentUpon>SignUpEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseRepository.cs" />
@@ -108,7 +129,6 @@
     <Content Include="Main\css\layout.css" />
     <Content Include="Main\css\reset.css" />
     <Content Include="Main\css\style.css" />
-    <Content Include="Main\flash\bk_logo_v8.swf" />
     <Content Include="Main\flash\header_v8.swf" />
     <Content Include="Main\flash\logo_v8.swf" />
     <Content Include="Main\flash\menu_v8.swf" />
@@ -125,6 +145,10 @@
     <Content Include="Main\images\6page_img2.jpg" />
     <Content Include="Main\images\6page_img3.jpg" />
     <Content Include="Main\images\7page_img1.jpg" />
+    <Content Include="Main\images\Banner_HariOm.jpg" />
+    <Content Include="Main\images\Banner_PeakBeings.jpg" />
+    <Content Include="Main\images\Banner_Samasati.jpg" />
+    <Content Include="Main\images\Banner_ShivaShakti.jpg" />
     <Content Include="Main\images\bg.gif" />
     <Content Include="Main\images\bg1.jpg" />
     <Content Include="Main\images\bg_cont.png" />
@@ -163,21 +187,28 @@
     <Content Include="Main\images\logo.gif" />
     <Content Include="Main\images\marker.gif" />
     <Content Include="Main\images\marker1.gif" />
+    <Content Include="Main\images\max02.jpg" />
     <Content Include="Main\images\menu_bg.gif" />
     <Content Include="Main\images\menu_left.gif" />
     <Content Include="Main\images\menu_right.gif" />
     <Content Include="Main\images\PeakBeings200.jpg" />
     <Content Include="Main\images\Shiva200.jpg" />
+    <Content Include="Main\images\SquareCircleLoader.gif" />
     <Content Include="Main\images\top.jpg" />
+    <Content Include="Main\images\YogaClasses01.jpg" />
+    <Content Include="Main\images\YogaClasses02.jpg" />
+    <Content Include="Main\images\YogaRetreat01.jpg" />
     <Content Include="Main\index-1.html" />
     <Content Include="Main\index-2.html" />
     <Content Include="Main\index-3.html" />
     <Content Include="Main\index-4.html" />
     <Content Include="Main\index-5.html" />
+    <Content Include="Main\index-6.aspx" />
     <Content Include="Main\index-6.html" />
     <Content Include="Main\index-7.html" />
     <Content Include="Main\index-8.html" />
     <Content Include="Main\index-9.html" />
+    <Content Include="Main\index.aspx" />
     <Content Include="Main\index.html" />
     <Content Include="Main\js\Caviar_Dreams_500.font.js" />
     <Content Include="Main\js\cufon-replace.js" />
@@ -186,6 +217,7 @@
     <Content Include="Main\js\html5.js" />
     <Content Include="Main\js\jquery-1.4.2.min.js" />
     <Content Include="Main\js\maxheight.js" />
+    <Content Include="Main\SignUpEmail.aspx" />
     <Content Include="Scripts\Course.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.21.custom.min.js" />

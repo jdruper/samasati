@@ -1,39 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title></title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-  <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-  <script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
-  <script type="text/javascript" src="js/cufon-yui.js"></script>
-  <script type="text/javascript" src="js/cufon-replace.js"></script>  
-<script type="text/javascript" src="js/Caviar_Dreams_500.font.js"></script>
-<script type="text/javascript" src="js/flashobject.js"></script>
-  <!--[if lt IE 7]>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index-6.aspx.cs" Inherits="SamasatiYoga.Main.index_6" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+
+    <script type="text/javascript" src="js/cufon-replace.js"></script>
+
+    <script type="text/javascript" src="js/Caviar_Dreams_500.font.js"></script>
+
+    <script type="text/javascript" src="js/flashobject.js"></script>
+
+    <!--[if lt IE 7]>
      <script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script.js"></script>
-  <![endif]-->
-  <!--[if lt IE 9]>
+    <![endif]-->
+    <!--[if lt IE 9]>
   	<script type="text/javascript" src="js/html5.js"></script>
   <![endif]-->
 </head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="head">
+            <div class="alignCenter">
+                <a href="http://www.adobe.com/go/EN_US-H-GET-FLASH">
+                    <img src="http://www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png"
+                        alt="" /></a></div>
+        </div>
 
-<body id="page7">
-<div class="tail-top">
-    <div id="head">
-        <div class="alignCenter"><a href="http://www.adobe.com/go/EN_US-H-GET-FLASH"><img src="http://www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="" /></a></div>
-    </div>
-    <script type="text/javascript">
-      var fo = new FlashObject("flash/logo_v8.swf", "head", "100%", "141", "7", "");
-      fo.addParam("quality", "high");
-                fo.addParam("wmode", "transparent");
+        <script type="text/javascript">
+            var fo = new FlashObject("flash/logo_v8.swf", "head", "100%", "141", "7", "");
+            fo.addParam("quality", "high");
+            fo.addParam("wmode", "transparent");
             fo.addParam("scale", "noscale");
-      fo.write("head");
-    </script>
+            fo.write("head");
+        </script>
 
-    <div id="main">
-        <header>
+        <script language="JavaScript">
+            function resetForm() {
+                document.getElementById("formIndex6").reset();
+            } 
+        </script>
+
+        <div id="main">
+            <header>
             <div class="inside">
                 <div class="container">
                     <div id="head1">
@@ -61,10 +78,10 @@
                 </div>               
             </div>
         </header>
-        <div class="bg-cont">
-            <div class="inside">
-                <div class="container">
-                    <aside>
+            <div class="bg-cont">
+                <div class="inside">
+                    <div class="container">
+                        <aside>
                        <!-- <h2>Departments</h2>
                         Customer Service:
                         <p class="block-contact"><span> +1 959 603 6035</span>Tel.:<br>          
@@ -77,24 +94,26 @@
                         <h2>Contact form</h2>
                         <!--<h4>Lorem ipsum dolor sit amet, consectetuer </h4>-->
                         <!--<p>Consectetuer adipiscing elit. Praesent vestibulum olestie lacus. Aenean nonummy.</p>-->
-                        <form action= id="form">
+                        <form action= id="formIndex6">
                           <fieldset>
                           <div class="rowElem">
-                             <input type="text" value="Name:" onBlur="if(this.value=='') this.value='Name:'" onFocus="if(this.value =='Name:' ) this.value=''" >
+                             <asp:TextBox  ID="txtName"  runat="server" Text="Name: "  onblur="if(this.value=='') this.value='Name: '" onfocus="if(this.value =='Name: ' ) this.value=''"></asp:TextBox>
                           </div>
                           <div class="rowElem">
-                             <input type="email" value="E-mail:" onBlur="if(this.value=='') this.value='E-mail:'" onFocus="if(this.value =='E-mail:' ) this.value=''" >
-                          </div>
+                             <asp:TextBox ID="txtEmail" runat="server" Text="E-mail: " onblur="if(this.value=='') this.value='E-mail:'" onfocus="if(this.value =='E-mail:' ) this.value=''" ></asp:TextBox>
+                          </div>  
                           <div class="rowElem1">
                              <textarea rows="40" cols="30"  onblur="if(this.value=='') this.value='Message:'" onFocus="if(this.value =='Message:' ) this.value=''"  >Message:</textarea>
-                          </div>                          
+                          </div>
+                          </div>
+                                
                           <div class="fright">
                           		<div class="container"><a href="#" onClick="document.getElementById('form').reset()" class="link">clear</a> &nbsp; &nbsp;<a href="" onClick="document.getElementById('form').submit()" class="link">send</a></div>
                           </div>
                           </fieldset>
                        </form>
                     </aside>
-                    <section id="content">
+                        <section id="content">
                         <div class="indent">
                             <h2 class="color1">Be in touch:</h2>
                             <article>
@@ -161,10 +180,10 @@
                             </article>-->
                         </div> </div>
                     </section>
+                    </div>
                 </div>
             </div>
-        </div>
-        <footer>      
+            <footer>      
             <div class="bot-left">
                 <div class="bot-right">
                     <div class="inside">
@@ -174,15 +193,14 @@
                             <li><a href="http://www.facebook.com/pages/Samasati/111718732178595"><img alt="" src="images/icon1.gif" /></a></li>
                             <!--<li><a href="#"><img alt="" src="images/icon2.gif" /></a></li>-->
                             <li><a href="https://twitter.com/Samasati"><img alt="" src="images/icon3.gif" /></a></li>
-                            <li><a href="http://www.stumbleupon.com"><img alt="" src="images/icon4.gif" /></a></li>
+                            <li><a href="http://www.stumbleupon.com/submit?url=www.samasatiyoga.com&title=Samasati Yoga"><img alt="" src="images/icon4.gif" /></a></li>
                         </ul>
                     </div>
                 </div>
             </div>   
         </footer>
+        </div>
     </div>
-</div>
-    
-  <script type="text/javascript"> Cufon.now(); </script>
+    </form>
 </body>
 </html>
