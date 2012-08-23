@@ -72,15 +72,47 @@
                 <div class="inside">
                     <div class="container">
                         <aside>
-                        <h2>Example</h2>
-                        <div class="p1 container1"><ul class="list1">
+                        <%--<h2>Example</h2>--%>
+                        <div class="p1 container1">
+                        &nbsp;
                             <!--<li><a href="#">Praesent vestibu molestie</a></li>-->
-                        </ul></div>
-                        <h2>Example 1 </h2>
+                        </div>
+                        <%--<h2>Example 1 </h2>--%>
+                        &nbsp;
                          <!--<a href="#" class="link">details  </a>                  -->
-                    </aside>
+                    </aside>                    
                         <section id="content">
                         <div class="indent">
+                        
+                        <h2 class="color1">Welcome to Living Yoga Retreat registration page!</h2>
+                            <article>
+                               <p> In order to confirm your reservation a deposit of $ 290.00 is due. It can be paid in 2
+                                   easy steps; we accept Visa and Master card.                                
+                                </p>
+                                <p>
+                                Deposits are not refundable but can be used for another Retreat within 1 year from
+                                cancellation.
+                                </p>
+                                <p>
+                                Choose the accommodation you prefer:
+                                </p>
+                                <p>
+                                <ul>
+                                <li>Bungalow:</li>
+                                <li>Single occupancy: $ 1,575.00</li>
+                                <li>Double occupancy: $ 1,335.00 per person</li>
+                                <li>Triple occupancy: $ 1,015.00 per person</li>
+                                </ul>
+                                </p>
+                                <p>
+                                <ul>
+                                <li>Classic room:</li>
+                                <li>Single occupancy: $ 1,165.00</li>
+                                <li>Double occupancy: $ 955.00 per person</li>
+                                </ul>
+                                </p>
+                            </article>
+                        
                         <% using (Html.BeginForm())
                            {%>
                             <%= Html.ValidationSummary(false, "Please fix the following errors to continue:", new Dictionary<string, object> { {"style", "font-size:smaller"}})%>
@@ -267,9 +299,9 @@
                               <h2 class="color1">Payment Information</h2>
                               <article>
                               	  <div class="container fleft divHeight">
-                              	    <input type="radio" name="SelectedPrice" value="4405" class="radioBtn" />Single: $ 4,405.00
-                              	    <input type="radio" name="SelectedPrice" value="4615" class="radioBtn" />Double: $ 4,615.00
-                              	    <input type="radio" name="SelectedPrice" value="4405" class="radioBtn" />Triple: $ 4,405.00                              	                                  	                                      
+                              	    <input type="radio" name="SelectedPrice" value="4405" class="radioBtn" />Deposit: $ 290.00
+                              	    <%--<input type="radio" name="SelectedPrice" value="4615" class="radioBtn" />Double: $ 4,615.00
+                              	    <input type="radio" name="SelectedPrice" value="4405" class="radioBtn" />Triple: $ 4,405.00--%>                              	                                  	                                      
                                     <br class="clear" />
                                   </div>                                      
                               </article>
